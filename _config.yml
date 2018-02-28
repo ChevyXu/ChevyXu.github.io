@@ -12,15 +12,15 @@ github_repo: "https://github.com/ChevyXu/ChevyXu.github.io.git" # you code repos
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "He went through  the world before finding kindred spirits!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: ChevyXu.github.io/img/10edb4fff6cc38461849d72ce57c809.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
+weibo_username:     面面的徐爷
+zhihu_username:     面面的徐爷
+github_username:    ChevyXu
 facebook_username:  baiying.qiu.7
 jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
