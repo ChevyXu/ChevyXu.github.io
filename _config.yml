@@ -1,6 +1,6 @@
 # Site settings
 title: Chevy Blog
-SEOTitle: 春晖的博客
+SEOTitle: 面面的徐爷
 header-img: ChevyXu.github.io/img/large_F4oj_0549000040f81191.jpg
 email: xchnju@gmail.com
 description: "Every failure is leading towards success."
@@ -98,16 +98,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "豆瓣—徐春晖",
+        href: "https://www.douban.com/people/129825621/"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "简书—徐洲更",
+        href: "https://www.jianshu.com/u/9ea40b5f607a"
     }
 ]
