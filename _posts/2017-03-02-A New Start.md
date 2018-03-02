@@ -4,13 +4,12 @@ title:      A New Start
 subtitle:    "\"Hello World, Hello Blog\""
 date:       2017-03-02
 author:     Chevy
-header-img: image_goodboy
+header-img: img/image_goodboy
 catalog: true
 tags:
     - 云在青天水在瓶
 ---
 
-![](http://upload-images.jianshu.io/upload_images/6049898-35d4590c66bfdc24.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 # 前言
 
