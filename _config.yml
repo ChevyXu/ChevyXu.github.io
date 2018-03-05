@@ -1,7 +1,7 @@
 # Site settings
 title: Chevy Blog
 SEOTitle: 面面的徐爷
-header-img: ChevyXu.github.io/img/bg_grey.jpg
+header-img: ChevyXu.github.io/img/bg_moonRising.jpg
 email: xchnju@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Chevy, Chevy Blog, 春晖"
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-disqus_username: ChevyXu
+# disqus_username: ChevyXu
 
 # Gitalk
 gitalk:

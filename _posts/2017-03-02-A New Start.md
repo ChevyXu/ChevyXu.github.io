@@ -19,7 +19,16 @@ tags:
 
 一开始走的是VPS+LNMP+Wordpress的路数，但是中间配置的时候觉得还是GitHub pages简单些，况且还有着合适的模板，所以先试着用GitHub试搭建一个blog，以期实验没有灵感的时候有新的事物可以发掘。
 
+---
+
 # 正文
 
 2018-03-02 项目起始
+
 2018-03-04 压缩并添加image，熟悉layout格式。
+
+---
+
+# 参考
+
+[BY blog](https://www.jianshu.com/p/e68fba58f75c)
