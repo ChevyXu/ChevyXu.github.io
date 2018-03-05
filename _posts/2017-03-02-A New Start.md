@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      A New Start
-subtitle:    "\"Hello World, Hello Blog\""
+subtitle:   愿上帝保佑每一个没有吃饱的人
 date:       2017-03-02
 author:     Chevy
 header-img: img/bg_climing.jpg
@@ -22,4 +22,4 @@ tags:
 # 正文
 
 2018-03-02 项目起始
-2018-03-04 添加image，熟悉layout格式。
+2018-03-04 压缩并添加image，熟悉layout格式。
