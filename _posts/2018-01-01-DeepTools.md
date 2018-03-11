@@ -4,7 +4,7 @@ title:	DeepTools学习笔记
 subtitle:   学习记录
 date:       2017-10-01
 author:     Chevy
-header-img: img/deeptools_bg.jpg
+header-img: img/deeptools_bg.png
 catalog: true
 tags:
     - 技术学习笔记
