@@ -53,7 +53,7 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 
 这个步骤很简单，就是构建一个表达质粒，使用试剂盒进行简单的体外表达，表达质粒可以选用SP6/T7体系的质粒：
 
-![T7](ChevyXu.github.io/_posts/Immobilized Template Assay.assets/T7.PNG)
+![T7](/_posts/Immobilized Template Assay.assets/T7.PNG)
 
 简单来说就是把你要翻译的质粒序列插入到多克隆位点区域（当然首先要切掉luciferase sequence），然后抽提出来以后就可以进行实验了。
 
@@ -85,6 +85,6 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 1. 试剂保存在-70°，拿出来以后用手捂化Master Mix后置于冰上，其余试剂于室温融化置于冰上
 2. 建议包括一个阳性control的反应
 
-![com](\Immobilized Template Assay.assets\com.PNG)
+![com](img/3-min.png)
 
 随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证
