@@ -27,7 +27,7 @@ ITA旨在分析反应中转录活性和转录因子的相关性的方法，分�
 - 体外转录实验：固定模板（启动子DNA序列）通过生物素 - 链霉键连接到磁珠上（图a）
 - 免疫印记分析：通过WB检查特异的转录因子是否存在于PIC(pre-initiation complex)中（图b）
 
-![Immobilized Template Assay](./Immobilized Template Assay.assets/Immobilized Template Assay.gif)
+![Immobilized Template Assay](.\Immobilized Template Assay.assets\Immobilized Template Assay.gif)
 
 ### Brief process
 
