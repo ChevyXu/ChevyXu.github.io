@@ -92,6 +92,7 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 1. 试剂保存在-70°，拿出来以后用手捂化Master Mix后置于冰上，其余试剂于室温融化置于冰上
 2. 建议包括一个阳性control的反应
 
+<<<<<<< HEAD
 ![protocol](https://upload-images.jianshu.io/upload_images/6049898-9f6b902107b2c41a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/400)
 
 随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证
@@ -107,3 +108,8 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 
 
 随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证。
+=======
+![com](_posts/Immobilized Template Assay.assets/com.PNG)
+
+随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证
+>>>>>>> 7816abe3b04d5b52aa732319affc351e42fc29ed
