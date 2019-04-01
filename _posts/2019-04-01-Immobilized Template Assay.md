@@ -27,7 +27,7 @@ ITA旨在分析反应中转录活性和转录因子的相关性的方法，分�
 - 体外转录实验：固定模板（启动子DNA序列）通过生物素 - 链霉键连接到磁珠上（图a）
 - 免疫印记分析：通过WB检查特异的转录因子是否存在于PIC(pre-initiation complex)中（图b）
 
-![Immobilized Template Assay](.\Immobilized Template Assay.assets\Immobilized Template Assay.gif)
+![Immobilized Template Assay](ChevyXu.github.io/_posts/Immobilized Template Assay.assets/Immobilized Template Assay.gif)
 
 ### Brief process
 
@@ -53,7 +53,7 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 
 这个步骤很简单，就是构建一个表达质粒，使用试剂盒进行简单的体外表达，表达质粒可以选用SP6/T7体系的质粒：
 
-![T7](./Immobilized Template Assay.assets/T7.PNG)
+![T7](/_posts/Immobilized Template Assay.assets/T7.PNG)
 
 简单来说就是把你要翻译的质粒序列插入到多克隆位点区域（当然首先要切掉luciferase sequence），然后抽提出来以后就可以进行实验了。
 
