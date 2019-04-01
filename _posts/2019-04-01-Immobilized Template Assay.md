@@ -4,7 +4,7 @@ title:	Immobilized Template Assay Record
 subtitle:	初春令月，气淑风和。
 date:       2019-04-01
 author:     Chevy
-header-img: img/5-min.png
+header-img: img/3-min.png
 catalog: true
 tags:
     - 技术学习笔记
@@ -27,7 +27,7 @@ ITA旨在分析反应中转录活性和转录因子的相关性的方法，分�
 - 体外转录实验：固定模板（启动子DNA序列）通过生物素 - 链霉键连接到磁珠上（图a）
 - 免疫印记分析：通过WB检查特异的转录因子是否存在于PIC(pre-initiation complex)中（图b）
 
-![Immobilized Template Assay](\_posts\Immobilized Template Assay.assets\Immobilized Template Assay.gif)
+![Immobilized Template Assay](./Immobilized Template Assay.assets/Immobilized Template Assay.gif)
 
 ### Brief process
 
@@ -53,7 +53,7 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 
 这个步骤很简单，就是构建一个表达质粒，使用试剂盒进行简单的体外表达，表达质粒可以选用SP6/T7体系的质粒：
 
-![T7](\_posts\Immobilized Template Assay.assets\T7.PNG)
+![T7](./Immobilized Template Assay.assets/T7.PNG)
 
 简单来说就是把你要翻译的质粒序列插入到多克隆位点区域（当然首先要切掉luciferase sequence），然后抽提出来以后就可以进行实验了。
 
@@ -85,6 +85,6 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 1. 试剂保存在-70°，拿出来以后用手捂化Master Mix后置于冰上，其余试剂于室温融化置于冰上
 2. 建议包括一个阳性control的反应
 
-![com](\_posts\Immobilized Template Assay.assets\com.PNG)
+![com](./Immobilized Template Assay.assets/com.PNG)
 
 随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证
