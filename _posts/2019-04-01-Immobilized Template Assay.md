@@ -27,7 +27,8 @@ ITA旨在分析反应中转录活性和转录因子的相关性的方法，分�
 - 体外转录实验：固定模板（启动子DNA序列）通过生物素 - 链霉键连接到磁珠上（图a）
 - 免疫印记分析：通过WB检查特异的转录因子是否存在于PIC(pre-initiation complex)中（图b）
 
-![Immobilized Template Assay](ChevyXu.github.io/_posts/Immobilized Template Assay.assets/Immobilized Template Assay.gif)
+![ITA](https://upload-images.jianshu.io/upload_images/6049898-997e5d4657c345a0.gif?imageMogr2/auto-orient/strip)
+
 
 ### Brief process
 
@@ -38,6 +39,11 @@ ITA旨在分析反应中转录活性和转录因子的相关性的方法，分�
 > 需要纯化目的蛋白，合成PCR序列也需要注意。
 
 Protocol handbook: [Immobilized Template Assay](https://link.springer.com/referencework/10.1007/978-1-4419-9863-7) 
+
+### Step1: Get Immobilized Template DNA
+**也就是合成带有生物素的片段，并连接到Dynabeads<sup>TM</sup> M-280 Streptavidin上）**
+
+你可以使用生物素标记试剂盒来进行标记（性价比较高），或者在公司进行合成，得到的引物进行PCR拿到带有生物素的片段，随后使用thermofisher的beads进行immobilize，得到可以进行反应的DNA。
 
 ### Step2: In vitro protein translation
 
@@ -53,7 +59,8 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 
 这个步骤很简单，就是构建一个表达质粒，使用试剂盒进行简单的体外表达，表达质粒可以选用SP6/T7体系的质粒：
 
-![T7](/_posts/Immobilized Template Assay.assets/T7.PNG)
+![T7](https://upload-images.jianshu.io/upload_images/6049898-7a96c7a0e0071366.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
+
 
 简单来说就是把你要翻译的质粒序列插入到多克隆位点区域（当然首先要切掉luciferase sequence），然后抽提出来以后就可以进行实验了。
 
@@ -85,6 +92,18 @@ Protocol handbook: [Immobilized Template Assay](https://link.springer.com/refere
 1. 试剂保存在-70°，拿出来以后用手捂化Master Mix后置于冰上，其余试剂于室温融化置于冰上
 2. 建议包括一个阳性control的反应
 
-![com](./Immobilized Template Assay.assets/com.PNG)
+![protocol](https://upload-images.jianshu.io/upload_images/6049898-9f6b902107b2c41a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/400)
 
 随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证
+**不要冻融master mix超过两次**
+
+#### Step2.B: General Protocl
+
+注意事项：
+
+1. 试剂保存在-70°，拿出来以后用手捂化Master Mix后置于冰上，其余试剂于室温融化置于冰上
+2. 建议包括一个阳性control的反应
+
+
+
+随后在30°孵育60-90分钟就可以了，产物可以使用western blot来进行验证。
