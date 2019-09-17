@@ -26,8 +26,11 @@ tags:
 ```r
 #Extract count data, phenotype data, and feature data from the Seurat Object.
 counts.data <- as(as.matrix(Seurat.object@assays$RNA@data), 'sparseMatrix')
+
 pheno.data <- new('AnnotatedDataFrame', data = Seurat.object@meta.data)
+
 feature.data <- data.frame(gene_short_name = row.names(counts.data), row.names = row.names(counts.data))
+
 feature.data <- new('AnnotatedDataFrame', data = feature.data)
 
 #Construct a CellDataSet.
@@ -41,7 +44,9 @@ cds <- newCellDataSet(counts.data,
 ```r
 # ===========================================================================================data readin
 filter_umi <- 450
+
 name <- character()
+
 temp <- list.files(path = "../Raw_data/",pattern="*_gene_exon_tagged.dge.txt.gz")
 temp
 
