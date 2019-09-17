@@ -21,10 +21,6 @@ tags:
 
 ## 基本步骤
 
-[TOC]
-
----
-
 ## Tips: 从Seurat3 pbmc构建数据到Monocle3
 
 ```r
