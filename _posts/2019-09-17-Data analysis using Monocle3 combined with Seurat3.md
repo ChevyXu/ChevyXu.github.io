@@ -21,6 +21,7 @@ tags:
 
 ## 基本步骤
 
+<<<<<<< HEAD
 [TOC]
 
 ---
@@ -44,12 +45,39 @@ cds <- newCellDataSet(counts.data,
 
 ```r
 # ===========================================================================================data readin
+=======
+## Tips: 从Seurat3 pbmc构建数据到Monocle3
+
+```r
+# Extract count data, phenotype data, and feature data from the Seurat Object.
+counts.data <- as(as.matrix(Seurat.object@assays$RNA@data), 'sparseMatrix')
+
+pheno.data <- new('AnnotatedDataFrame', data = Seurat.object@meta.data)
+
+feature.data <- data.frame(gene_short_name = row.names(counts.data), row.names = row.names(counts.data))
+
+feature.data <- new('AnnotatedDataFrame', data = feature.data)
+
+# Construct a CellDataSet.
+cds <- newCellDataSet(counts.data, 
+                   phenoData = pheno.data, 
+                   featureData = feature.data)
+```
+
+
+
+## Step1: data read-in
+
+```r
+# ===================================================================data readin
+>>>>>>> ae7e002d1660b2725edc2db55152957864950e4a
 filter_umi <- 450
 name <- character()
 temp <- list.files(path = "../Raw_data/",pattern="*_gene_exon_tagged.dge.txt.gz")
 temp
 
 for(i in 1:length(temp)){
+<<<<<<< HEAD
   name[i] <- unlist(strsplit(temp[i],"_out_gene_exon_tagged.dge.txt.gz"))[1]
   message(paste(name[i], "is loading"))
   
@@ -71,10 +99,35 @@ message("data loading done, and strat merge counts file")
 summary <- NULL
 for (s in 1:length(temp)) {
   summary <- cbind(summary, as.matrix(summary(colSums(get(name[s])))))
+=======
+    name[i] <- unlist(strsplit(temp[i],"_out_gene_exon_tagged.dge.txt.gz"))[1]
+    message(paste(name[i], "is loading"))
+    
+    tmpvalue<-read.table(paste0("../Raw_data/", temp[i]), 
+                         sep = "\t", quote = "", row.names = 1, header = T)
+    message(paste(name[i], "is loaded, now is adding name"))
+    
+    colnames(tmpvalue) <- paste0(name[i], "-", colnames(tmpvalue))
+    message(paste0(name[i], "'s name added, now filtering ", filter_umi))
+    
+    tmpvalue <- tmpvalue[,colSums(tmpvalue) >= filter_umi]
+    message(paste(name[i], "cells above", filter_umi, "filtered"))
+    
+    assign(name[i], tmpvalue)
+    rm(tmpvalue)
+}
+message("data loading done, and strat merge counts file")
+
+# ==============================================================UMI summary
+summary <- NULL
+for (s in 1:length(temp)) {
+    summary <- cbind(summary, as.matrix(summary(colSums(get(name[s])))))
+>>>>>>> ae7e002d1660b2725edc2db55152957864950e4a
 }
 colnames(summary) <- paste0(name, "'s UMI")
 summary
 
+<<<<<<< HEAD
 # ===========================================================================================data merge
 dge <- get(name[1])
 for(p in 2:length(temp)) {
@@ -85,10 +138,27 @@ for(p in 2:length(temp)) {
   dge <-  dplyr::select(dge_merge, -(name)) %>% na.replace(0)
   rm(dge_temp)
   rm(dge_merge)
+=======
+# ===============================================================data merge
+dge <- get(name[1])
+for(p in 2:length(temp)) {
+    dge_temp <- get(name[p])
+    dge_merge <- dplyr::full_join(dge %>% mutate(name = rownames(dge)), 
+                                  dge_temp %>% mutate(name = rownames(dge_temp)))
+    rownames(dge_merge) <- dge_merge$name
+    dge <-  dplyr::select(dge_merge, -(name)) %>% na.replace(0)
+    rm(dge_temp)
+    rm(dge_merge)
+>>>>>>> ae7e002d1660b2725edc2db55152957864950e4a
 }
 message("data merge done")
 ```
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ae7e002d1660b2725edc2db55152957864950e4a
 ## Step2: cds construction
 
 ```r
