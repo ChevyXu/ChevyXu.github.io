@@ -40,7 +40,7 @@ Doesn’t lead to good visualizations.
 
 Check out this example comparing the two methods:
 
-```r
+```
 # You can write R code here and then click "Run" to run it on our platform
 
 library(readr)

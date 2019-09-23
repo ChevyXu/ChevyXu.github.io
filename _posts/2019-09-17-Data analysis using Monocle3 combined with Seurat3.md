@@ -27,7 +27,7 @@ tags:
 
 ## Tips: 从Seurat3 pbmc构建数据到Monocle3
 
-```r
+```
 #Extract count data, phenotype data, and feature data from the Seurat Object.
 counts.data <- as(as.matrix(Seurat.object@assays$RNA@data), 'sparseMatrix')
 pheno.data <- new('AnnotatedDataFrame', data = Seurat.object@meta.data)
@@ -42,7 +42,7 @@ cds <- newCellDataSet(counts.data,
 
 ## Step1: data read-in
 
-```r
+```
 # ===================================================================data readin
 filter_umi <- 450
 name <- character()
@@ -92,7 +92,7 @@ message("data merge done")
 
 ## Step2: cds construction
 
-```r
+```
 cds <- new_cell_data_set(expression_data = as.matrix(dge),
                          cell_metadata = cell_metadata,
                          gene_metadata = gene_metadata)
@@ -100,7 +100,7 @@ cds <- new_cell_data_set(expression_data = as.matrix(dge),
 
 ## Step3: normalization and scale and PCA
 
-```r
+```
 cds <- preprocess_cds(cds, 
                       method = "PCA", 
                       # use_genes = c(pbmc@assays$SCT@var.features),
@@ -111,7 +111,7 @@ cds <- preprocess_cds(cds,
 
 ## Step4: UMAP or tSNE
 
-```r
+```
 cds <- reduce_dimension(cds, 
                         cores = 4,
                         reduction_method = "UMAP", 
@@ -126,7 +126,7 @@ plot_cells(cds,
 
 ## Step5: clustering cells
 
-```r
+```
 cds = cluster_cells(cds, 
                     reduction_method = "UMAP", 
                     k = 200)
@@ -135,14 +135,14 @@ plot_cells(cds, reduction_method = "UMAP", cell_size = 1)
 
 ## Step6: trajectory construction
 
-```r
+```
 cds <- learn_graph(cds)
 # 目前只支持针对UMAP结果做路径构建
 ```
 
 ## step7: order pesudotime
 
-```r
+```
 cds <-  order_cells(cds)
 plot_cells(cds,
            color_cells_by = "pseudotime",
