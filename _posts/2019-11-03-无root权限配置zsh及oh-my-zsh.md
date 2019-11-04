@@ -17,6 +17,8 @@ tags:
 
 ### zsh的安装
 
+[洲更的 B站视频]( https://www.bilibili.com/video/av62804850 )已经很明白的介绍了zsh是什么及oh-my-zsh的安装，主题的更换等等
+
 #### 搜索得到的解决办法
 
 `google`是个好东西， [这篇文章](https://www.hijerry.cn/p/37831.html) 详细的阐述了如何在没有root权限下搞定`zsh`的安装
@@ -48,3 +50,14 @@ echo '[ -f $HOME/biosoft/anaconda3/bin/zsh ] && exec $HOME/biosoft/anaconda3/bin
 
 如果是使用 conda安装的zsh，随后使用zsh作为默认shell的时候，需要使用`conda init zsh`进行环境配置
 
+---
+
+### powerlevel9k or powerlevel10k
+
+[配置好看的zsh吧！]( https://coreja.com/DailyHack/2019/08/config-your-super-zsh/ )这篇文章给出了博主的powerlevel9k配置方案，只需要下载[这个包](https://coreja.com/DailyHack/2019/08/config-your-super-zsh/oh-my-zsh.zip)，进行替换就可以了
+
+> 需要注意的是，这个主题因为有很多的特殊字符所以需要安装powerline字体，Ubuntu或者macOS系统的搞定比较简单，Windows下暂时还没没有很好的解决方法
+
+分享一个我配置好的xshell客户端下的界面
+
+![](https://upload-images.jianshu.io/upload_images/6049898-5dd270480ade176c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
