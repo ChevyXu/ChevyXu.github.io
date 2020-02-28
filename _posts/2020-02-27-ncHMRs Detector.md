@@ -67,14 +67,13 @@ HMRs(Histone modification regulators)为组蛋白修饰调节因子，它可以�
 1. 作者对已经报道的LNCap-abl细胞内EZH2结合位点的H3K27me3信号进行了检视（density plot），发现EZH2结合位点的H3K27me3信号明显可以看出来为双峰模式：
 
      ![双峰](https://imgkr.cn-bj.ufileos.com/6eb66eba-468f-4ece-9c2f-b9a8ed2a92c9.PNG)
-
-
-**红色**线条为全局H3K27me3信号模式，**绿色**线条为有H3K27me3信号结合的区域，**藏蓝色**线条为H3K27me3信号弱或无区域
-
+     
+     **红色**线条为全局H3K27me3信号模式，**绿色**线条为有H3K27me3信号结合的区域，**藏蓝色**线条为H3K27me3信号弱或无区域
+     
 2. 同时作者发现已被报道的辅因子在EZH2 peaks区域的结合信号与H3K27me3是互斥的（可以理解为上面的藏蓝色区域与绿色区域）：
-   
+
    ![互斥](https://imgkr.cn-bj.ufileos.com/1f5a71eb-2c84-48b3-8d6b-74fa6397f182.PNG)
-   
+
 3. 以上两点构成了的设计理论基础
 
    - 最好有双峰模式支持HMRs的经典/非经典功能
