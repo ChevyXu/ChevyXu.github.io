@@ -66,17 +66,15 @@ HMRs(Histone modification regulators)为组蛋白修饰调节因子，它可以�
 
 1. 作者对已经报道的LNCap-abl细胞内EZH2结合位点的H3K27me3信号进行了检视（density plot），发现EZH2结合位点的H3K27me3信号明显可以看出来为双峰模式：
 
-  ![双峰](https://imgkr.cn-bj.ufileos.com/6eb66eba-468f-4ece-9c2f-b9a8ed2a92c9.PNG)
+     ![双峰](https://imgkr.cn-bj.ufileos.com/6eb66eba-468f-4ece-9c2f-b9a8ed2a92c9.PNG)
 
 
 **红色**线条为全局H3K27me3信号模式，**绿色**线条为有H3K27me3信号结合的区域，**藏蓝色**线条为H3K27me3信号弱或无区域
 
 2. 同时作者发现已被报道的辅因子在EZH2 peaks区域的结合信号与H3K27me3是互斥的（可以理解为上面的藏蓝色区域与绿色区域）：
    
-
-![互斥](https://imgkr.cn-bj.ufileos.com/1f5a71eb-2c84-48b3-8d6b-74fa6397f182.PNG)
-
-
+   ![互斥](https://imgkr.cn-bj.ufileos.com/1f5a71eb-2c84-48b3-8d6b-74fa6397f182.PNG)
+   
 3. 以上两点构成了的设计理论基础
 
    - 最好有双峰模式支持HMRs的经典/非经典功能
@@ -86,23 +84,22 @@ HMRs(Histone modification regulators)为组蛋白修饰调节因子，它可以�
 4. ncHMR detector的工作原理包括以下四步：
 
    - **第一步**，对特定的HMR统计其底物或者产物peaks前后5kb或者1kb（根据信号类型有差别）的信号值，同时统计这些peaks区域是否有其他转录因子的结合（一般来源于公共数据库，或者实验室数据）
-   
-    ![第一步](https://imgkr.cn-bj.ufileos.com/d246c94f-b6ee-4795-ae9a-ad286634068d.png)
 
-   
+      ![第一步](https://imgkr.cn-bj.ufileos.com/d246c94f-b6ee-4795-ae9a-ad286634068d.png)
+
    - **第二步**，使用penalized linear regression找出与底物或者产物信号值负相关的转录因子数据，作为初步候选辅因子
-   
-     ![第二步](https://imgkr.cn-bj.ufileos.com/84d99a22-96c8-41af-ad93-a0a19b0af054.png)
 
-   
+     ​	 			![第二步](https://imgkr.cn-bj.ufileos.com/84d99a22-96c8-41af-ad93-a0a19b0af054.png)
+
+
    - **第三步**，经过筛选的转录因子数据再使用单变量线性回归的方法拟合其与组蛋白修饰信号共发生的模型，留下回归系数小于零（负相关），决定系数大于等于0.1的转录因子作为可以认为是HMRs非经典作用的辅因子
-   
-     ![第三步](https://imgkr.cn-bj.ufileos.com/8014b09f-b7e8-4beb-b470-855533d49bd5.png)
 
-   
+     ​					![第三步](https://imgkr.cn-bj.ufileos.com/8014b09f-b7e8-4beb-b470-855533d49bd5.png)
+
+
    - **第四步**，为了反馈预测的非经典功能的作用基因位点，HMR的peaks被封为经典和非经典两类进行输出
-   
-     ![第四步](https://imgkr.cn-bj.ufileos.com/e5efc951-66ec-442d-aedb-644da8e98e72.png)
+
+     ​					![第四步](https://imgkr.cn-bj.ufileos.com/e5efc951-66ec-442d-aedb-644da8e98e72.png)
 
 
 5. 作者针对ncHMR detector寻找辅因子较高的特异性和准确性进行了计算论证，并同已有的一些算法进行了比较（此处略去计算方面的讲解），说明了ncHMR detector的优越性
