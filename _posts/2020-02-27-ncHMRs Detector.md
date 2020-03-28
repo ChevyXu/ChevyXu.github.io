@@ -4,7 +4,7 @@ title:	Genome Biology文章解读：组蛋白调节因子(HMRs)只负责组蛋�
 subtitle:	曲水池上，小字更书年月。
 date:	2020-02-27
 author:	Chevy
-header-img:	img/16.jpg
+header-img:	img/19.png
 catalog:	true
 tags:
     - 技术学习笔记
