@@ -31,7 +31,7 @@ DEseq2包提供了基于负二项分布构建的线性模型对差异表达进�
 
 此时的设定是，我们拿到了表达矩阵`cts is your counts matrix`， 同时我们构建了样本信息文件`coldata is your design information`，那么最快速的差异分析流程如下：
 
-```R
+```
 dds <- DESeqDataSetFromMatrix(countData = cts,
                               colData = coldata,
                               design= ~ batch + condition)
