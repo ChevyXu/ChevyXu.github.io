@@ -2,7 +2,7 @@
 title: Chevy Blog
 SEOTitle: 面面的徐爷
 header-img: ChevyXu.github.io/img/bg_moonRising.png
-email: xchnju@gmail.com
+email: xuch@sibs.ac.cn
 description: "Every failure is leading towards success."
 keyword: "Chevy, Chevy Blog, 春晖"
 url: "https://chevyxu.github.io/"          # your host, for absolute URL
@@ -17,7 +17,7 @@ sidebar-avatar: /img/image_chunhui.jpg     # use absolute URL, seeing it's used 
 
 
 # SNS settings
-RSS: false
+RSS: True
 weibo_username:     2268771031
 #zhihu_username:     ChecyX
 github_username:    ChevyXu
@@ -61,7 +61,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: False    #是否开启Gitalk评论
   clientID: 6063ebe724c821ecef41   #生成的clientID
   clientSecret: 620f0031f5f2b138e6a9c953540abe9d893c4d4a  #同上
   repo: ChevyXu.github.io    #仓库名称
@@ -103,5 +103,8 @@ friends: [
     },{
         title: "简书—徐洲更",
         href: "https://www.jianshu.com/u/9ea40b5f607a"
+    },{
+        title: "B站—徐春晖",
+        href: "https://space.bilibili.com/579878271"
     }
 ]
