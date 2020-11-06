@@ -11,7 +11,7 @@ github_repo: "https://github.com/ChevyXu/ChevyXu.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "He went through  the world before finding kindred spirits!"
+sidebar-about-description: "He went through the world before finding kindred spirits!"
 sidebar-avatar: /img/image_chunhui.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -24,8 +24,6 @@ github_username:    ChevyXu
 facebook_username:  chunhui.xu.90
 jianshu_username:   fe854ffa1f9e
 #twitter_username:   
-
-
 
 
 # Build settings
@@ -77,22 +75,15 @@ gitalk:
 
 # Google Analytics
 ga_track_id: 'UA-115007342-1'             # Format: UA-xxxxxx-xx
-ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-
-
+ga_domain: xuchunhui.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
 featured-condition-size: 0             # 相同标签数量大于这个数，才会出现在首页
 
-
-
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
 
 
 # Friends
