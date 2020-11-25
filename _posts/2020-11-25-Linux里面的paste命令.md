@@ -54,7 +54,7 @@ wanglab@mgt:~/test$ cat number
 5
 ```
 
-我们目前有state, captial和number几个文件，使用`paste`命令会
+我们目前有state, captial和number几个文件，使用`paste`命令对这几个文件进行处理
 
 ### 参数
 
@@ -108,7 +108,7 @@ wanglab@mgt:~/test$ cat number
    wanglab@mgt:~/test$ paste --version
    paste (GNU coreutils) 8.22
    Copyright (C) 2013 Free Software Foundation, Inc.
-   License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+   License GPLv3+: GNU GPL version 3 or later       <http://gnu.org/licenses/gpl.html>.
    This is free software: you are free to change and redistribute it.
    There is NO WARRANTY, to the extent permitted by law.
    
