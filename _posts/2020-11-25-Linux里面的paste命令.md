@@ -80,7 +80,7 @@ wanglab@mgt:~/test$ cat number
    5|Chhattisgrah,Raipur|5
    ```
 
-2.  `-s (serial)`
+2. `-s (serial)`
 
    `-s`参数可以指示shell将读入的文件按行输出，每个文件都会被整合到一行，原文件内的数据每行之间会以`tab`作为分隔符，每个文件的内容占据一行：
    
