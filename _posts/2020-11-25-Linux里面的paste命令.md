@@ -11,7 +11,7 @@ tags:
 style: plain
 ---
 
-## Linux里面的 paste命令
+## Linux里面的paste命令
 
 paste命令是Unix和Linux系统中使用频率很高的一个命令。它被用来将文件按列以**tab**作为分隔符拼接在一起随后输出到标准输出(standard output)。
 
