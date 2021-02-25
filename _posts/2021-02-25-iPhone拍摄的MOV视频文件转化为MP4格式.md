@@ -4,7 +4,7 @@ title: iPhone拍摄的MOV视频文件转化为MP4格式
 subtitle: 青春的动人之处，就在于勇气，和他们的远大前程。
 date: 2021-02-25
 author: Chevy
-header-img: img/38.jpg
+header-img: img/38.png
 catalog: true
 tags:
   - 技术学习笔记
