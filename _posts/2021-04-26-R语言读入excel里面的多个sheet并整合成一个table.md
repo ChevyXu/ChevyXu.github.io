@@ -1,7 +1,7 @@
 ---
 layout: post
 title: R语言读入Excel多个sheet数据
-subtitle: 努力尽今夕，少年犹可夸。
+subtitle: 云雨无情难管领，任他别嫁楚襄王。
 date: 2021-04-26
 author: Chevy
 header-img: img/40.png
@@ -12,7 +12,7 @@ style: plain
 ---
 
 # 子标题
-> #### readxl::read_excel(): importing multiple worksheets
+> readxl::read_excel(): importing multiple worksheets
 
 # 介绍
 [readxl](https://readxl.tidyverse.org/)包是一个用于读入Excel数据（包括.xls, .xlsx为文件）到R里面的包。
