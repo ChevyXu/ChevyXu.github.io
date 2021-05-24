@@ -11,7 +11,7 @@ tags:
 style: plain
 ---
 
-### 首先安装我们会用到的包并加在
+### 首先安装我们会用到的包并加载
 
 ```shell
 # 安装tidyverse
