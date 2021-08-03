@@ -11,12 +11,7 @@ tags:
 style: plain
 ---
 
-
-## 计算二代测序数据的Insert size和standard deviation
-
-
-
-### Solution 1：Picard的[CollectInsertSizeMetrics](https://gatk.broadinstitute.org/hc/en-us/articles/360037055772-CollectInsertSizeMetrics-Picard-)命令
+## Solution 1：Picard的[CollectInsertSizeMetrics](https://gatk.broadinstitute.org/hc/en-us/articles/360037055772-CollectInsertSizeMetrics-Picard-)命令
 
 该工具为验证文库构建提供了有用的指标，包括双端文库的插入大小分布和读取方向。
 
@@ -36,7 +31,7 @@ java -jar picard.jar CollectInsertSizeMetrics \
 
 你会得到insert_size_metrics.txt，其中***MEAN_INSERT_SIZE***和***STANDARD_DEVIATION***列就是我们需要的结果了。
 
-#### Solution 2：使用python脚本计算
+## Solution 2：使用python脚本计算
 
 脚本如下
 
@@ -104,11 +99,14 @@ if __name__ == "__main__":
 
 
 
-#### Solution 3：使用shell的awk计算
+## Solution 3：使用shell的awk计算
+
+示例：
 
 ```shell
 awk '{ if ($9 > 0) { N+=1; S+=$9; S2+=$9*$9 }} END { M=S/N; print "n="N", mean="M", stdev="sqrt ((S2-M*M*N)/(N-1))}' sample.sam
 ## 数据过滤，以insert size <2000 为限制举例
 awk '{ if ($9 > 0) {if ($9 <2000){ N+=1; S+=$9; S2+=$9*$9 }}} END { M=S/N; print "n="N", mean="M", stdev="sqrt ((S2-M*M*N)/(N-1))}' sample.sam
 ```
+
 
