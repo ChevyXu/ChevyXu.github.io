@@ -4,7 +4,7 @@ title: 计算二代测序数据的Insert size和standard deviation
 subtitle: 涓涓不塞，将为江河。
 date: 2021-08-03
 author: Chevy
-header-img: img/44.png
+header-img: img/45.png
 catalog: true
 tags:
   - 技术学习笔记
