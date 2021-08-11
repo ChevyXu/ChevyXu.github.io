@@ -4,7 +4,7 @@ title: 计算二代测序数据的Insert size和standard deviation
 subtitle: 涓涓不塞，将为江河。
 date: 2021-08-03
 author: Chevy
-header-img: img/43.png
+header-img: img/44.png
 catalog: true
 tags:
   - 技术学习笔记
@@ -108,5 +108,4 @@ awk '{ if ($9 > 0) { N+=1; S+=$9; S2+=$9*$9 }} END { M=S/N; print "n="N", mean="
 ## 数据过滤，以insert size <2000 为限制举例
 awk '{ if ($9 > 0) {if ($9 <2000){ N+=1; S+=$9; S2+=$9*$9 }}} END { M=S/N; print "n="N", mean="M", stdev="sqrt ((S2-M*M*N)/(N-1))}' sample.sam
 ```
-
 
