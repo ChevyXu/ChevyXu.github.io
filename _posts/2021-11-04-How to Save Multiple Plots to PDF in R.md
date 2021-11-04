@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Save Multiple Plots to PDF in R
+title: 春晖の学习治疗整合
 subtitle: 秋色从西来，苍然满关中。
 date: 2021-11-04
 author: Chevy
@@ -13,6 +13,15 @@ style: plain
 
 > 引言：
 > 偶然所得一个无敌棒的R语言入门网站，予以整理，以待后览
+
+------
+
+- [ ] [statology网站](https://www.statology.org/machine-learning-tutorials/)
+  - 有基础的统计概念简介
+  - R语言和Python的机器学习
+  - R语言操作的实例
+
+------
 
 You can use the following basic syntax to save multiple plots to a PDF in R:
 
