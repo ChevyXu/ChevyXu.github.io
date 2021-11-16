@@ -12,14 +12,23 @@ style: plain
 ---
 
 > 引言：
-> 偶然所得一个无敌棒的R语言入门网站，予以整理，以待后览
+> 
+> 偶然所得一个无敌棒的R语言入门网站，予以整理，以待后览 
+>
+> Update:2021-11-16
 
 ------
 
-- [ ] [statology网站](https://www.statology.org/machine-learning-tutorials/)
-  - 有基础的统计概念简介
-  - R语言和Python的机器学习
-  - R语言操作的实例
+[statology网站](https://www.statology.org/machine-learning-tutorials/)
+
+- 有基础的统计概念简介
+- R语言和Python的机器学习
+- R语言操作的实例
+
+[DataNovia网站](https://www.datanovia.com/en/blog/category/ggplot2/)
+
+- R语言可视化ggplot2示例
+- cluster analysis
 
 ------
 
