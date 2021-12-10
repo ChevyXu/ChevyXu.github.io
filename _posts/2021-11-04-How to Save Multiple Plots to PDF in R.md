@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 春晖の学习治疗整合
+title: 春晖の学习资源整合
 subtitle: 秋色从西来，苍然满关中。
 date: 2021-11-04
 author: Chevy
@@ -29,6 +29,11 @@ style: plain
 
 - R语言可视化ggplot2示例
 - cluster analysis
+
+[R 数据分析指南与速查手册](https://bookdown.org/xiao/RAnalysisBook/)
+
+- bookdown，包括了R语言基础，数据分析，Rmarkdown撰写分析报告
+- 其中关于可视化讲的很多
 
 ------
 
