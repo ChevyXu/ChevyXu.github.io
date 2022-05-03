@@ -47,6 +47,10 @@ https://draculatheme.com/iterm/
 
 解压后更换 Preferences-Profiles-Color-Color Presets-Import
 
+##### 4. 配置在iTerm2能够使用`code .`命令启动vscode
+
+首先安装vscode，打开后使用`command + shift + p`进入快捷键搜索栏，搜索shell，选择下面的Install 'code' command in PATH，之后在终端中即可以使用code .快速启动vscode啦
+
 ## 二、oh-my-zsh配置
 
 #### 安装oh-my-zsh
