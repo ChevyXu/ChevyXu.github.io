@@ -11,7 +11,6 @@ tags:
 style: plain
 ---
 
-
 # 此post旨在提取heatmap作图中的cluster行名或者列名
 
 > 其实，对heatmap热图提取cluster就是对hclust的结果提取cluster，tree_col和tree_row属性
@@ -36,6 +35,7 @@ colnames(data) <- paste("Sample", c(1:ncol(data)))
 dev.copy(png, "heatmap_raw.png", width=4000, height=4000, res = 330)
 dev.off()
 ```
+
 [![heatmap_raw.md.png](https://img.xuchunhui.top/images/2022/01/14/heatmap_raw.md.png)](https://img.xuchunhui.top/image/Znf2)
 
 ## 随后，我们提取热图中的行名和列名
@@ -53,8 +53,8 @@ abline(h = 11.5, col="red", lty=2, lwd=2)
 dev.copy(png, "heatmap_hclust.png", width=4000, height=4000, res = 330)
 dev.off()
 ```
-[![heatmap_hclust.md.png](https://img.xuchunhui.top/images/2022/01/14/heatmap_hclust.md.png)](https://img.xuchunhui.top/image/ZXMS)
 
+[![heatmap_hclust.md.png](https://img.xuchunhui.top/images/2022/01/14/heatmap_hclust.md.png)](https://img.xuchunhui.top/image/ZXMS)
 
 ## 假如我们需要可视化的话，可以加一个annotation
 
@@ -71,4 +71,5 @@ pheatmap(data, scale = "row", annotation_col = tree)
 dev.copy(png, "heatmap_3cluster.png", width=4000, height=4000, res = 330)
 dev.off()
 ```
+
 [![heatmap_3cluster.md.png](https://img.xuchunhui.top/images/2022/01/14/heatmap_3cluster.md.png)](https://img.xuchunhui.top/image/ZZFf)
