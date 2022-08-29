@@ -2,7 +2,7 @@
 layout: post
 title: ggplot2 tricks
 subtitle: 博学之，审问之，慎思之，明辨之，笃行之。
-date: 2022-07-28
+date: 2022-07-29
 author: Chevy
 header-img: img/055.png
 catalog: true

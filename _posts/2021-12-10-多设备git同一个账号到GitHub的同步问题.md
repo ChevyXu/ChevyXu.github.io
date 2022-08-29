@@ -14,7 +14,6 @@ style: plain
 ## 最近在编辑bookdown，并且将这本Linux_Shell_Script托管到GitHub pages上。
 现在用两个设备本地建立git仓库后同步到同一个GitHub的repo上，更换设备进行编辑的时候，首先会git pull，经常会导致出现冲突
 
-
 > 《当GitHub的文件和本地文件不一致的时候，git pull命令会自动merge冲突，再让你手动修改》
 
 ### **我的需求是，以remote端的文件为最新版，同步到我的本地仓库后继续工作。**
@@ -46,5 +45,5 @@ git clean -f -d
     resetorigin = !git fetch origin && git reset --hard origin/master && git clean -f -d
     resetupstream = !git fetch upstream && git reset --hard upstream/master && git clean -f -d
 ```
-随后使用`git resetupstream`或者 `git resetorigin` 即可一键同步。
 
+随后使用`git resetupstream`或者 `git resetorigin` 即可一键同步。
