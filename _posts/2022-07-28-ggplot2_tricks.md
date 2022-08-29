@@ -4,14 +4,14 @@ title: ggplot2 tricks
 subtitle: 博学之，审问之，慎思之，明辨之，笃行之。
 date: 2022-07-28
 author: Chevy
-header-img: img/48.png
+header-img: img/54.png
 catalog: true
 tags:
   - 技术学习笔记
 style: plain
 ---
 
-## plot2 tricks 1
+## ggplot2 tricks 1
 
 ### How to remove black border around plots/graphics in ggplot2?
 
@@ -31,7 +31,9 @@ ggplot(mtcars, aes(x = mpg)) +
 
 ---
 
-## How to save multiple plots to a PDF in R
+## ggplot2 tricks 2
+
+### How to save multiple plots to a PDF in R
 
 You can use the following basic syntax :
 
