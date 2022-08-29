@@ -15,9 +15,9 @@ style: plain
 
 ### How to remove black border around plots/graphics in ggplot2?
 
-针对`  theme_clean()`这个主题我们都会遇到这个问题，画出来的图都会带一个黑框。可以在`theme()`函数里面进行解决。
+针对`theme_clean()`这个主题我们都会遇到这个问题，画出来的图都会带一个黑框。可以在`theme()`函数里面进行解决。
 
-```
+```shell
 library(ggplot2)
 library(ggthemes)
 data(mtcars)
