@@ -24,9 +24,7 @@ data(mtcars)
 ggplot(mtcars, aes(x = mpg)) +
   geom_point(aes(y = hp)) +
   theme_clean() +
-  theme(plot.background = element_rect(
-    color = "white"
-  ))
+  theme(plot.background = element_rect(color = "white"))
 ```
 
 ---
@@ -87,7 +85,7 @@ dev.off()
 
 Once I navigate to the PDF in the specified location on my computer, I find the following one-page PDF with four plots on it:
 
-![img](https://www.statology.org/wp-content/uploads/2021/07/pdfsave1.png)
+<img src="https://www.statology.org/wp-content/uploads/2021/07/pdfsave1.png" alt="img" style="zoom: 33%;" />
 
 ### **Example 2: Save Multiple Plots to Different Pages in PDF**
 
