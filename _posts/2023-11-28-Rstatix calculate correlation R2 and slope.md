@@ -9,7 +9,6 @@ catalog: true
 tags:
   - 技术学习笔记
 style: plain
-
 ---
 
 
@@ -48,4 +47,3 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   ggpubr::stat_cor(aes(label = paste(after_stat(rr.label), p.label, sep = "~ `,`~")), color = "brown", label.y.npc = 1) +
   ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95)
 ```
-  
