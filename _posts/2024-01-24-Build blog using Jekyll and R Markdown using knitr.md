@@ -58,12 +58,14 @@ output:
 - 将 Rmarkdown 转为markdown后生成的图片存储在img文件夹中
 - 让markdown中的图片链接/路径在 Github/Jekyll 网站上运行
 
+在_post文件夹下的rmd文件可以这么设置（加入Sys.Date是为了防止图片冲突）：
+
 ```
-knitr::opts_knit$set(base.dir = "/Path/to/your/Jekyll.github.io/", base.url = "/")
-knitr::opts_chunk$set(fig.path = "images/")
+knitr::opts_knit$set(base.dir = "../../ChevyXu.github.io/", base.url = "../")
+knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "-"))
 ```
 
-## [方案二：https://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/](https://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/)
+## [方案二：blogging-with-r-markdown-and-jekyll-using-knitr/](https://brooksandrew.github.io/simpleblog/articles/blogging-with-r-markdown-and-jekyll-using-knitr/)
 
 这位博主写了一个函数 `KnitPost()` :
 
