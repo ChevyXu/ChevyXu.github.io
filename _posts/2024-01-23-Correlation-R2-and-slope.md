@@ -1,7 +1,7 @@
 ---
 title: "How to calculate correlation R2 and slope"
 author: "Chevy"
-date: "2024-01-24"
+date: "2024-01-23"
 knit: (function(input, encoding) {
   rmarkdown::render(input,
                     output_dir = "../_posts/")})
