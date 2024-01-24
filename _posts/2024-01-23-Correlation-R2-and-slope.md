@@ -1,7 +1,9 @@
 ---
 title: "How to calculate correlation R2 and slope"
+subtitle: 不采百花，难酿好蜜。
 author: "Chevy"
-date: "2024-01-23"
+date: "2024-01-24"
+header-img: img/52.png
 knit: (function(input, encoding) {
   rmarkdown::render(input,
                     output_dir = "../_posts/")})
@@ -9,6 +11,8 @@ output:
   md_document:
     variant: markdown_github
     preserve_yaml: true
+tags:
+  - 技术学习笔记
 ---
 
 ## Using rstatix do quick calculation
