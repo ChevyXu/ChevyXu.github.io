@@ -12,7 +12,7 @@ knit: (function(input, encoding) {
   rmarkdown::render(input, output_dir = "../_posts/")})
 output: 
   md_document:
-    variant: gfm
+    variant: markdown_github
     preserve_yaml: true
   # prettydoc::html_pretty:
   # theme: cayman
