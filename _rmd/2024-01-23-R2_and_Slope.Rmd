@@ -1,0 +1,63 @@
+---
+title: "How to calculate correlation R2 and slope"
+subtitle: "不采百花，难酿好蜜。"
+author: "Chevy"
+date: "2024-01-26"
+header-img: "img/055.png"
+tags:
+  - 技术学习笔记
+knit: (function(input, encoding) {
+  rmarkdown::render(input, output_dir = "../_posts/")})
+output: 
+  md_document:
+    variant: markdown_github
+    preserve_yaml: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(base.dir = "../../ChevyXu.github.io/", base.url = "/")
+knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
+# knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Using rstatix do quick calculation
+
+```{r iris, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(rstatix)
+
+iris %>%
+  group_by(Species) %>%
+  cor_test(Sepal.Width, Sepal.Length, method = "pearson")
+
+```
+
+## Correlation add R2 and slope
+
+```{r summary, echo=TRUE, message=FALSE, warning=FALSE}
+bdims_summary <- iris %>%
+  group_by(Species) %>%
+  summarize(N = n(), r = cor(Sepal.Width, Sepal.Length),
+            mean_hgt = mean(Sepal.Width), 
+            mean_wgt = mean(Sepal.Length),
+            sd_hgt = sd(Sepal.Width), 
+            sd_wgt = sd(Sepal.Length),
+            slope = r*(sd_wgt/sd_hgt),
+            intercept = mean_wgt - (slope*mean_hgt),
+            r2 = r*r)
+
+bdims_summary
+```
+
+## Plot
+
+```{r ggplot, echo=TRUE, message=FALSE, warning=FALSE, fig.height=5, fig.width=10}
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~Species) + 
+  ggthemes::theme_few(base_size = 15) +
+  ggpubr::stat_cor(aes(label = paste(after_stat(rr.label), p.label, sep = "~ `,`~")), color = "brown", label.y.npc = 1) +
+  ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95) 
+```
+
