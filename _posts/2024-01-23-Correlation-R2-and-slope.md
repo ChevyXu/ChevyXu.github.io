@@ -3,7 +3,7 @@ title: "How to calculate correlation R2 and slope"
 subtitle: "不采百花，难酿好蜜。"
 author: "Chevy"
 date: "2024-01-25"
-header-img: img/052.png
+header-img: /img/052.png
 knit: (function(input, encoding) {
   rmarkdown::render(input, output_dir = "../_posts/")})
 output: 
@@ -80,4 +80,4 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95) 
 ```
 
-![](img/052.png)
+![](/img/052.png)
