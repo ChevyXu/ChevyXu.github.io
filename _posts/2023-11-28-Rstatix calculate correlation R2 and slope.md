@@ -4,7 +4,7 @@ title: Rstatix calculate correlation R2 and slope
 subtitle: 君子欲讷于言而敏于行。
 date: 2023-11-28
 author: Chevy
-header-img: img/52.png
+header-img: img/052.png
 catalog: true
 tags:
   - 技术学习笔记
@@ -15,7 +15,7 @@ style: plain
 # 测试在R里面，使用tidyverse搭配rstatix更简便的做计算，例如t.test()/cor()
 
 
-```
+```r
 library(tidyverse)
 library(rstatix)
 
@@ -39,7 +39,7 @@ bdims_summary
 
 ## 作图
 
-```
+```r
 ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   geom_point() +
   geom_smooth(method = "lm") +
