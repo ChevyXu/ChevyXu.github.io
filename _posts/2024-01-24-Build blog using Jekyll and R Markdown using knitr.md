@@ -4,7 +4,7 @@ title: Posting Rmarkdowns to your Jekyll website
 subtitle: 蟠木不雕饰，且将斤斧疏。
 date: 2024-01-24
 author: Chevy
-header-img: img/52.png
+header-img: img/052.png
 catalog: true
 tags:
   - 技术学习笔记
