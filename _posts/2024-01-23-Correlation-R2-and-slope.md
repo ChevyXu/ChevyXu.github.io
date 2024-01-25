@@ -1,12 +1,11 @@
 ---
 title: "How to calculate correlation R2 and slope"
-subtitle: 不采百花，难酿好蜜。
+subtitle: "不采百花，难酿好蜜。"
 author: "Chevy"
-date: "2024-01-23"
-header-img: img/055.png
+date: "2024-01-25"
+header-img: img/52.png
 knit: (function(input, encoding) {
-  rmarkdown::render(input,
-                    output_dir = "../_posts/")})
+  rmarkdown::render(input, output_dir = "../_posts/")})
 output: 
   md_document:
     variant: markdown_github
@@ -15,7 +14,7 @@ tags:
   - 技术学习笔记
 ---
 
-## Using rstatix do quick calculation
+## 1. Using rstatix do quick calculation
 
 ``` r
 library(tidyverse)
@@ -69,7 +68,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95) 
 ```
 
-![](../img/2024-01-24/ggplot-1.png)
+![](../img/2024-01-25/ggplot-1.png)
 
 ``` r
 ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
@@ -81,4 +80,4 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95) 
 ```
 
-![](img/2024-01-24/unnamed-chunk-1-1.png)
+![](img/2024-01-25/unnamed-chunk-1-1.png)

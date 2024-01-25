@@ -1,12 +1,11 @@
 ---
 title: "How to calculate correlation R2 and slope"
-subtitle: 不采百花，难酿好蜜。
+subtitle: "不采百花，难酿好蜜。"
 author: "Chevy"
-date: "`r Sys.Date()`"
+date: "2024-01-25"
 header-img: img/52.png
 knit: (function(input, encoding) {
-  rmarkdown::render(input,
-                    output_dir = "../_posts/")})
+  rmarkdown::render(input, output_dir = "../_posts/")})
 output: 
   md_document:
     variant: markdown_github
