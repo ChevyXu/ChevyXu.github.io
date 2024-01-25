@@ -68,7 +68,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95) 
 ```
 
-![](../img/2024-01-25/ggplot-1.png)
+![](/img/2024-01-25/ggplot-1.png)
 
 ``` r
 ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
