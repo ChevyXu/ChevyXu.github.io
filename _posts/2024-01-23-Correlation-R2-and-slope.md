@@ -2,7 +2,7 @@
 title: "How to calculate correlation R2 and slope"
 subtitle: 不采百花，难酿好蜜。
 author: "Chevy"
-date: "2024-01-24"
+date: "2024-01-23"
 header-img: img/055.png
 knit: (function(input, encoding) {
   rmarkdown::render(input,
