@@ -40,16 +40,18 @@ anchorjs: true                          # if you want to customize anchor. check
 gems: [jekyll-paginate]
 
 
-
-
 # Markdown settings
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
-# kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  # do not replace newlines by <br>s
+  hard_wrap: false                            # use Github Flavored Markdown !important
 
 
 
