@@ -4,7 +4,7 @@ title: Install Rstudio Server introduction
 subtitle: 君子欲讷于言而敏于行。
 date: 2024-01-22
 author: Chevy
-header-img: img/052.png
+header-img: img/055.png
 catalog: true
 header-mask: 20%
 tags:
