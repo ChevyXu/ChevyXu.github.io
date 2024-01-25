@@ -2,7 +2,7 @@
 layout: post
 title: How to calculate correlation R2 and slope
 subtitle: 不采百花，难酿好蜜。
-date: Sys.Date()
+date: `r Sys.Date()`
 author: Chevy
 header-img: img/055.png
 tags:
