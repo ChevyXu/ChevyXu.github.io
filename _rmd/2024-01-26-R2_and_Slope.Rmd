@@ -5,9 +5,10 @@ subtitle: 不采百花，难酿好蜜。
 date: "`r Sys.Date()`"
 author: Chevy
 header-img: img/055.png
+catalog: true
 tags:
   - 技术学习笔记
-style: plain
+style: plain 
 knit: (function(input, encoding) {
   rmarkdown::render(input, output_dir = "../_posts/")})
 output: 
@@ -65,11 +66,3 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length)) +
   ggpubr::stat_cor(aes(label = paste(after_stat(rr.label), p.label, sep = "~ `,`~")), color = "brown", label.y.npc = 1) +
   ggpubr::stat_regline_equation(color = "brown", label.y.npc = 0.95) 
 ```
-
-### New test
-### New test
-### New test
-### New test
-### New test
-### New test
-#### New test
