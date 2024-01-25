@@ -21,7 +21,7 @@ style: plain
 ### Option 1: Uploading a complete / allinclusive html file
 
 这个方案很简单，就是先用rmarkdown的knitr生成一个html文件，再在html文件的开头加上一段YAML：
-```
+```r
 ---
 layout: post
 title: Your blog title
@@ -38,7 +38,7 @@ title: Your blog title
 #### 阻碍一：确保保留/沿用前面的内容。
 可以通过增加以下代码实现：
 
-```
+```r
 ---
 layout: post
 title: Your blog title
@@ -73,7 +73,7 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "-"))
 - 在 rmd.path 中创建 R Markdown post 并保存为 .Rmd 文件。确保包含适合 Jekyll 的 YAML 前置内容。我最初就是被这个问题绊倒的。我忘了把日期从 knitr 风格的日期（"月，日 YYYY"）改为 Jekyll 风格的日期（"YYYY-MM-DD"）。
 - 运行 `KnitPost()` 发布 R Markdown 文件
 
-```
+```r
 KnitPost <- function(site.path='/pathToYourBlog/', overwriteAll=F, overwriteOne=NULL) {
   if(!'package:knitr' %in% search()) library('knitr')
   
