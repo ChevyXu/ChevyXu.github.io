@@ -2,7 +2,7 @@
 layout: post
 title: How to calculate correlation R2 and slope
 subtitle: 不采百花，难酿好蜜。
-date: `r Sys.Date()`
+date: "`r Sys.Date()`"
 author: Chevy
 header-img: img/055.png
 tags:
@@ -12,7 +12,7 @@ knit: (function(input, encoding) {
   rmarkdown::render(input, output_dir = "../_posts/")})
 output: 
   md_document:
-    variant: markdown_github
+    variant: gfm
     preserve_yaml: true
   # prettydoc::html_pretty:
   # theme: cayman
