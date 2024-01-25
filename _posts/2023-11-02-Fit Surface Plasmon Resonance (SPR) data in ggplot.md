@@ -4,7 +4,7 @@ title: SPR数据的建模及作图
 subtitle: 转载学习来源
 date: 2023-11-02
 author: Chevy
-header-img: img/52.png
+header-img: img/052.png
 catalog: true
 tags:
   - 技术学习笔记
