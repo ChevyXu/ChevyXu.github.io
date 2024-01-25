@@ -2,6 +2,11 @@
 layout: default
 ---
 
+<!-- Add syntax highlighting CSS and JS for R code -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
@@ -58,7 +63,9 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
 
-				{{ content }}
+				<!-- {{ content }} -->
+                {{ content | replace: "<pre><code>", "{% highlight r %}<code>" | replace: "</code></pre>", "</code>{% endhighlight %}" }}
+
 
                 <hr style="visibility: hidden;">
 
