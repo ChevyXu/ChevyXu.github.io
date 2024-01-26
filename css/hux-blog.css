@@ -275,13 +275,13 @@ pre code {
 @media screen and (max-width: 768px) {
   .post-container ul,
   .post-container ol {
-    padding-left: 10px;
+    padding-left: 40px;
   }
 }
 @media screen and (max-width: 500px) {
   .post-container ul,
   .post-container ol {
-    padding-left: 10px;
+    padding-left: 30px;
   }
 }
 .post-container ol ol,
