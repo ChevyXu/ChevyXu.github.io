@@ -15,8 +15,8 @@
 }
 
 /* Custom styles for adjusting content width */
-.container {
-  width: 80%;
+.custom-width {
+  width: 90%; /* Adjust this value to set the desired width */
   margin: 0 auto; /* Center the container horizontally */
 }
 
