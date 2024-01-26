@@ -275,13 +275,13 @@ pre code {
 @media screen and (max-width: 768px) {
   .post-container ul,
   .post-container ol {
-    padding-left: 30px;
+    padding-left: 20px;
   }
 }
 @media screen and (max-width: 500px) {
   .post-container ul,
   .post-container ol {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 }
 .post-container ol ol,
@@ -305,7 +305,7 @@ pre code {
 }
 
 .post-container.custom-width {
-  width: 100%; /* Adjust this value as needed */
+  width: 90%; /* Adjust this value as needed */
   margin: 0 auto; /* Centers the container horizontally */
   /* Add any other styling you need */
 }
