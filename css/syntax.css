@@ -140,17 +140,17 @@ pre.highlight .nf { color: #009900; font-weight: bold; } /* R Function Names */
 /* Line Numbers */
 pre {
     counter-reset: line;
+    position: relative;
 }
 pre code {
     counter-increment: line;
 }
 pre code:before {
     content: counter(line);
-    display: inline-block;
-    width: 2em; /* Adjust based on your code's length */
+    position: absolute;
+    left: -2.5em; /* Adjust based on your code's length */
     text-align: right;
-    padding-right: 0.5em;
     color: #999; /* Color of line numbers */
-    border-right: 1px solid #ddd; /* Vertical line separating line numbers from code */
     user-select: none;
 }
+
