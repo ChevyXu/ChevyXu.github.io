@@ -83,3 +83,44 @@
 .highlight .vi { color: teal; }
 .highlight .il { color: #009999; }
 .highlight .gc { color: #999; background-color: #EAF2F5; }
+
+
+/* Fancy Code Block Style with Line Numbers */
+.highlight {
+  background-color: #f7f7f7;
+  border-left: 3px solid #ccc;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  padding: 1em;
+  line-height: 1.5em;
+  position: relative;
+}
+
+.highlight pre {
+  background-color: inherit;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.highlight pre code {
+  background-color: inherit;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.highlight pre code:before {
+  color: #ccc;
+  content: attr(data-line);
+  display: inline-block;
+  margin-right: 1em;
+  position: absolute;
+  text-align: right;
+  width: 2em;
+  user-select: none;
+}
+
