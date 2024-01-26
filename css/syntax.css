@@ -124,3 +124,14 @@
   user-select: none;
 }
 
+/* Customized Code Block Style for R language */
+pre.highlight .nc { color: #007F00; } /* R Keywords */
+pre.highlight .nf { color: #0000FF; font-weight: bold; } /* R Function Calls */
+pre.highlight .s { color: #FF0000; } /* R Strings */
+pre.highlight .nb { color: #007F00; } /* R Built-in Constants */
+pre.highlight .no { color: #007F00; } /* R Constants */
+pre.highlight .mi { color: #FF00FF; } /* R Infix Operators */
+pre.highlight .m { color: #FF00FF; } /* R Miscellaneous */
+pre.highlight .p { color: #000000; } /* R Punctuation */
+pre.highlight .c1 { color: #666666; font-style: italic; } /* R Comments */
+pre.highlight .cm { color: #666666; font-style: italic; } /* R Multiline Comments */
