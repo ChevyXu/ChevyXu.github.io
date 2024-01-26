@@ -303,8 +303,16 @@ pre code {
   line-height: 2;
   margin-top: 20px;
 }
+
+.post-container.custom-width {
+  width: 90%; /* Adjust this value as needed */
+  margin: 0 auto; /* Centers the container horizontally */
+  /* Add any other styling you need */
+}
+
+
 .post-container .pager li {
-  width: 48%;
+  width: 58%;
 }
 .post-container .pager li.next {
   float: right;
