@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ggplot2_plot_density
-subtitle: Leave blank.
+title: ggplot2_plot_raster
+subtitle: 看见好看的科研作图，就会忍不住的尝试重现。
 date: "`r Sys.Date()`"
 author: Chevy
 header-img: img/055.png
@@ -20,7 +20,14 @@ output:
   # toc: yes
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_knit$set(base.dir = "../../ChevyXu.github.io/", base.url = "/")
+knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
+# knitr::opts_chunk$set(echo = TRUE)
+```
+
 # Shwo how to ggplot2 using stat_density
+## 使用geom_raster来画这张图
 
 ```{r}
 library(tidyverse)

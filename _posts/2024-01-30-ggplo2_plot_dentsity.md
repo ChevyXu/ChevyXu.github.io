@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ggplot2_plot_density
-subtitle: Leave blank.
+title: ggplot2_plot_raster
+subtitle: 看见好看的科研作图，就会忍不住的尝试重现。
 date: "2024-01-30"
 author: Chevy
 header-img: img/055.png
@@ -21,6 +21,8 @@ output:
 ---
 
 # Shwo how to ggplot2 using stat_density
+
+## 使用geom_raster来画这张图
 
 ``` r
 library(tidyverse)
@@ -86,4 +88,4 @@ p[[length(genes_plot)]] <-
 patchwork::wrap_plots(p , ncol = 1)
 ```
 
-![](D:/Github_repo/ChevyXu.github.io/_posts/2024-01-30-ggplo2_plot_dentsity_files/figure-markdown_github/unnamed-chunk-2-1.png)
+![](/img/2024-01-30/unnamed-chunk-2-1.png)
