@@ -24,6 +24,8 @@ output:
 
 ## 使用geom_raster来画这张图
 
+> Reference: <https://ggplot2.tidyverse.org/reference/geom_tile.html>
+
 ``` r
 library(tidyverse)
 ```
