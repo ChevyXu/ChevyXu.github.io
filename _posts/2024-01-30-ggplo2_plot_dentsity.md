@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ggplot2_plot_raster
-subtitle: 看见好看的科研作图，就会忍不住的尝试重现。
+subtitle: 一悟归身处，何山路不通。
 date: "2024-01-30"
 author: Chevy
 header-img: img/055.png
