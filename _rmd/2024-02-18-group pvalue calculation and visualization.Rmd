@@ -1,0 +1,101 @@
+---
+layout: post
+title: group pvalue calculation and visualization using rstatix and ggpubr
+subtitle: Add color to life.
+date: "`r Sys.Date()`"
+author: Chevy
+header-img: img/055.png
+catalog: true
+tags:
+  - 技术学习笔记
+style: plain 
+knit: (function(input, encoding) {
+  rmarkdown::render(input, output_dir = "../_posts/")})
+output: 
+  md_document:
+    variant: markdown_github
+    preserve_yaml: true
+  # prettydoc::html_pretty:
+  # theme: cayman
+  # toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(base.dir = "../../ChevyXu.github.io/", base.url = "/")
+knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
+# knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Get example data
+
+```{r}
+library(tidyverse)
+library(rstatix)
+
+example <- 
+  tibble::tibble(
+  para = rnorm(n = 30, mean = 300, sd = 20) %>% round(digits = 2),
+  dose = rep(rep(c("dose_1", "dose_2", "dose_3", "dose_4", "dose_5"), each = 2), 3),
+  date = rep(c("date_1", "date_2", "date_3"), each = 10)) %>% 
+  group_by(dose, date) %>% 
+  mutate(mean = mean(para)) %>% 
+  mutate(sd = sd(para)) %>% 
+  mutate(cv = sd/mean)
+
+example
+```
+
+# Using Rstatix to calculate pvalue
+```{r}
+stat.test <- example %>% 
+  rename("value" = colnames(.)[1]) %>% 
+  filter(sd != 0) %>%
+  group_by(dose) %>% 
+  mutate(x = n()) %>% 
+  filter(x >= 4) %>% 
+  t_test(value ~ date) %>% 
+  filter(group1 == "date_1")
+
+stat.test <- stat.test %>% 
+    add_xy_position(x = "dose", dodge = 0.75)
+```
+
+# get the final plot
+```{r fig.height=6, fig.width=9}
+ggplot(example, aes(x = dose, y = para, color = dose, fill = dose)) +
+    geom_errorbar(aes(ymin = mean, ymax=mean + sd, alph = date), width=.2,  
+                  position=position_dodge(.75), linewidth = 0.5) +
+    geom_point(aes(fil = date), shape = 21, size = 3, color = "gray44",
+               position = position_jitterdodge(dodge.width = 0.75, jitter.width = 0)) +
+    geom_bar(data = example %>% select(-1) %>% distinct(),
+             aes(y = mean, fill = dose, color = dose, alpha = date), 
+             stat = "identity",  width = 0.6, position = position_dodge(width = 0.75)) +
+    scale_color_manual(values =  ggsci::pal_locuszoom()(5) %>% rev()) +
+    scale_fill_manual(values =  ggsci::pal_locuszoom()(5) %>% rev()) +
+    scale_alpha_manual(values = c(seq(1, 9, 2))*0.1) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.1)), name = "Units") +
+    # scale_y_continuous(name = plot_data %>% colnames() %>% nth(n = 1) %>% str_remove(pattern = "\\|.*\\|"), 
+    #                    expand = c(0, 0), limits = c(0, max(plot_data %>% pull(1))*1.1)) +
+    labs(title = "t.test example") + xlab(NULL) +
+    cowplot::theme_cowplot(font_size = 10, line_size = 0.8) +
+    theme(axis.title = element_text(size = 20, face = "bold"), 
+          axis.text = element_text(size = 15, color = "black"), 
+          axis.ticks.length = unit(.2, "cm"),
+          plot.title = element_text(size = 25, hjust = 0.5, face = "bold"), 
+          legend.key.size = unit(0.8, "cm"),
+          axis.line = element_line(colour = "black", size = 1),
+          # panel.border = element_rect(size = 1, colour = "black"),
+          axis.ticks = element_line(colour = "black", size = 1),
+          legend.text = element_text(size = 15), 
+          plot.caption = element_text(size = 12, hjust = 1.2, face = "italic"),
+          legend.title = element_text(size = 15, face = "bold"),
+          strip.text = element_text(face = "bold", size = 15)) +
+    ggpubr::stat_pvalue_manual(stat.test, label = "p.adj.signif", tip.length = 0.01, bracket.nudge.y = 0) +
+    scale_x_discrete(labels = c("dose_1" = "0 mg/kg\nMale", 
+                                "dose_2" = "0.3mg/kg\nMale", 
+                                "dose_3" = "3mg/kg\nMale", 
+                                "dose_4" = "30mg/kg\nMale", 
+                                "dose_5" = "3mg/kg\nFemale"))
+
+```
+
