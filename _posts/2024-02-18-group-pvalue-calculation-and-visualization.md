@@ -22,6 +22,10 @@ output:
 
 # 1. Get example data
 
+``` r
+library(tidyverse)
+```
+
     ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
     ## ✔ dplyr     1.1.2     ✔ readr     2.1.5
     ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -32,28 +36,46 @@ output:
     ## ✖ dplyr::filter() masks stats::filter()
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+``` r
+library(rstatix)
+```
+
     ## 
     ## 载入程辑包：'rstatix'
-    ## 
     ## 
     ## The following object is masked from 'package:stats':
     ## 
     ##     filter
 
+``` r
+example <- 
+  tibble::tibble(
+  para = rnorm(n = 30, mean = 300, sd = 20) %>% round(digits = 2),
+  dose = rep(rep(c("dose_1", "dose_2", "dose_3", "dose_4", "dose_5"), each = 2), 3),
+  date = rep(c("date_1", "date_2", "date_3"), each = 10)) %>% 
+  group_by(dose, date) %>% 
+  mutate(mean = mean(para)) %>% 
+  mutate(sd = sd(para)) %>% 
+  mutate(cv = sd/mean)
+
+example
+```
+
     ## # A tibble: 30 × 6
     ## # Groups:   dose, date [15]
     ##     para dose   date    mean    sd     cv
     ##    <dbl> <chr>  <chr>  <dbl> <dbl>  <dbl>
-    ##  1  314. dose_1 date_1  289. 35.5  0.123 
-    ##  2  263. dose_1 date_1  289. 35.5  0.123 
-    ##  3  279. dose_2 date_1  291. 17.0  0.0584
-    ##  4  304. dose_2 date_1  291. 17.0  0.0584
-    ##  5  319. dose_3 date_1  310. 12.4  0.0400
-    ##  6  301. dose_3 date_1  310. 12.4  0.0400
-    ##  7  307. dose_4 date_1  313.  8.53 0.0272
-    ##  8  319. dose_4 date_1  313.  8.53 0.0272
-    ##  9  285. dose_5 date_1  300. 22.2  0.0739
-    ## 10  316. dose_5 date_1  300. 22.2  0.0739
+    ##  1  269. dose_1 date_1  277. 11.3  0.0409
+    ##  2  285. dose_1 date_1  277. 11.3  0.0409
+    ##  3  366. dose_2 date_1  339. 38.9  0.115 
+    ##  4  311. dose_2 date_1  339. 38.9  0.115 
+    ##  5  250. dose_3 date_1  299. 69.5  0.232 
+    ##  6  349. dose_3 date_1  299. 69.5  0.232 
+    ##  7  302. dose_4 date_1  295.  9.13 0.0309
+    ##  8  289. dose_4 date_1  295.  9.13 0.0309
+    ##  9  300. dose_5 date_1  308. 11.7  0.0380
+    ## 10  317. dose_5 date_1  308. 11.7  0.0380
     ## # ℹ 20 more rows
 
 ``` r
@@ -73,16 +95,16 @@ stat.test
     ## # A tibble: 10 × 11
     ##    dose   .y.   group1 group2    n1    n2 statistic    df     p p.adj
     ##    <chr>  <chr> <chr>  <chr>  <int> <int>     <dbl> <dbl> <dbl> <dbl>
-    ##  1 dose_1 value date_1 date_2     2     2    -0.906  1.00 0.531 1    
-    ##  2 dose_1 value date_1 date_3     2     2    -0.366  1.33 0.764 1    
-    ##  3 dose_2 value date_1 date_2     2     2    -0.613  1.61 0.615 1    
-    ##  4 dose_2 value date_1 date_3     2     2    -0.407  1.97 0.724 1    
-    ##  5 dose_3 value date_1 date_2     2     2     0.966  1.40 0.471 1    
-    ##  6 dose_3 value date_1 date_3     2     2    -0.238  1.25 0.845 1    
-    ##  7 dose_4 value date_1 date_2     2     2    -4.49   1.03 0.134 0.402
-    ##  8 dose_4 value date_1 date_3     2     2     0.349  1.47 0.77  0.77 
-    ##  9 dose_5 value date_1 date_2     2     2     0.622  1.16 0.634 1    
-    ## 10 dose_5 value date_1 date_3     2     2    -0.566  2.00 0.629 1    
+    ##  1 dose_1 value date_1 date_2     2     2     0.726  1.42 0.569 1    
+    ##  2 dose_1 value date_1 date_3     2     2    -0.594  1.38 0.635 1    
+    ##  3 dose_2 value date_1 date_2     2     2     1.17   1.03 0.446 0.892
+    ##  4 dose_2 value date_1 date_3     2     2     0.401  1.20 0.748 0.892
+    ##  5 dose_3 value date_1 date_2     2     2     0.227  1.19 0.853 1    
+    ##  6 dose_3 value date_1 date_3     2     2    -0.157  1.00 0.901 1    
+    ##  7 dose_4 value date_1 date_2     2     2    -4.41   1.97 0.049 0.148
+    ##  8 dose_4 value date_1 date_3     2     2    -0.729  1.08 0.591 1    
+    ##  9 dose_5 value date_1 date_2     2     2    -0.220  1.50 0.852 1    
+    ## 10 dose_5 value date_1 date_3     2     2    -0.473  1.39 0.7   1    
     ## # ℹ 1 more variable: p.adj.signif <chr>
 
 ``` r
@@ -96,16 +118,16 @@ stat.test
     ## # A tibble: 10 × 16
     ##    dose   .y.   group1 group2    n1    n2 statistic    df     p p.adj
     ##    <chr>  <chr> <chr>  <chr>  <int> <int>     <dbl> <dbl> <dbl> <dbl>
-    ##  1 dose_1 value date_1 date_2     2     2    -0.906  1.00 0.531 1    
-    ##  2 dose_1 value date_1 date_3     2     2    -0.366  1.33 0.764 1    
-    ##  3 dose_2 value date_1 date_2     2     2    -0.613  1.61 0.615 1    
-    ##  4 dose_2 value date_1 date_3     2     2    -0.407  1.97 0.724 1    
-    ##  5 dose_3 value date_1 date_2     2     2     0.966  1.40 0.471 1    
-    ##  6 dose_3 value date_1 date_3     2     2    -0.238  1.25 0.845 1    
-    ##  7 dose_4 value date_1 date_2     2     2    -4.49   1.03 0.134 0.402
-    ##  8 dose_4 value date_1 date_3     2     2     0.349  1.47 0.77  0.77 
-    ##  9 dose_5 value date_1 date_2     2     2     0.622  1.16 0.634 1    
-    ## 10 dose_5 value date_1 date_3     2     2    -0.566  2.00 0.629 1    
+    ##  1 dose_1 value date_1 date_2     2     2     0.726  1.42 0.569 1    
+    ##  2 dose_1 value date_1 date_3     2     2    -0.594  1.38 0.635 1    
+    ##  3 dose_2 value date_1 date_2     2     2     1.17   1.03 0.446 0.892
+    ##  4 dose_2 value date_1 date_3     2     2     0.401  1.20 0.748 0.892
+    ##  5 dose_3 value date_1 date_2     2     2     0.227  1.19 0.853 1    
+    ##  6 dose_3 value date_1 date_3     2     2    -0.157  1.00 0.901 1    
+    ##  7 dose_4 value date_1 date_2     2     2    -4.41   1.97 0.049 0.148
+    ##  8 dose_4 value date_1 date_3     2     2    -0.729  1.08 0.591 1    
+    ##  9 dose_5 value date_1 date_2     2     2    -0.220  1.50 0.852 1    
+    ## 10 dose_5 value date_1 date_3     2     2    -0.473  1.39 0.7   1    
     ## # ℹ 6 more variables: p.adj.signif <chr>, y.position <dbl>,
     ## #   groups <named list>, x <dbl>, xmin <dbl>, xmax <dbl>
 
@@ -148,17 +170,8 @@ ggplot(example, aes(x = dose, y = para, color = dose, fill = dose)) +
                                 "dose_5" = "3mg/kg\nFemale"))
 ```
 
-    ## Warning in geom_errorbar(aes(ymin = mean, ymax = mean + sd, alph = date), :
-    ## Ignoring unknown aesthetics: alph
+![](/img/2024-02-19/unnamed-chunk-4-1.png)
 
-    ## Warning in geom_point(aes(fil = date), shape = 21, size = 3, color = "gray44",
-    ## : Ignoring unknown aesthetics: fil
+## Reference
 
-    ## Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
-    ## ℹ Please use the `linewidth` argument instead.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
-![](/img/2024-02-19/unnamed-chunk-4-1.png) \## Reference
 <https://www.datanovia.com/en/blog/how-to-add-p-values-onto-a-grouped-ggplot-using-the-ggpubr-r-package/>

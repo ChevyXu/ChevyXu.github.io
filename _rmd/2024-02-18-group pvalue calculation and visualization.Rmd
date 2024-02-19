@@ -28,7 +28,7 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 
 # 1. Get example data
 
-```{r echo=FALSE, warning=FALSE}
+```{r warning=FALSE}
 library(tidyverse)
 library(rstatix)
 
@@ -67,9 +67,9 @@ stat.test <- stat.test %>%
 stat.test
 ```
 
-
 # get the final plot
-```{r fig.height=6, fig.width=9}
+
+```{r fig.height=6, fig.width=9, warning=FALSE}
 ggplot(example, aes(x = dose, y = para, color = dose, fill = dose)) +
     geom_errorbar(aes(ymin = mean, ymax=mean + sd, alph = date), width=.2,  
                   position=position_dodge(.75), linewidth = 0.5) +
@@ -106,5 +106,7 @@ ggplot(example, aes(x = dose, y = para, color = dose, fill = dose)) +
                                 "dose_5" = "3mg/kg\nFemale"))
 
 ```
+
 ## Reference
-https://www.datanovia.com/en/blog/how-to-add-p-values-onto-a-grouped-ggplot-using-the-ggpubr-r-package/
+
+<https://www.datanovia.com/en/blog/how-to-add-p-values-onto-a-grouped-ggplot-using-the-ggpubr-r-package/>
