@@ -28,7 +28,7 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 
 # 1. Get example data
 
-```{r warning=FALSE}
+```{r message=FALSE, warning=FALSE, paged.print=TRUE}
 library(tidyverse)
 library(rstatix)
 
@@ -45,6 +45,8 @@ example <-
 example
 ```
 
+# 2. Using Rstatix to calculate pvalue
+
 ```{r}
 # Using Rstatix to calculate pvalue
 stat.test <- example %>% 
@@ -58,18 +60,18 @@ stat.test <- example %>%
 
 stat.test
 ```
+# 3. adjust lable position based on dodge width
 
 ```{r}
-# adjust lable position based on dodge width
 stat.test <- stat.test %>% 
     add_xy_position(x = "dose", dodge = 0.75)
 
 stat.test
 ```
 
-# get the final plot
+# 5. Get the final plot
 
-```{r fig.height=6, fig.width=9, warning=FALSE}
+```{r fig.height=6, fig.width=9, message=FALSE, warning=FALSE}
 ggplot(example, aes(x = dose, y = para, color = dose, fill = dose)) +
     geom_errorbar(aes(ymin = mean, ymax=mean + sd, alph = date), width=.2,  
                   position=position_dodge(.75), linewidth = 0.5) +

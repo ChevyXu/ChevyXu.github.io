@@ -24,31 +24,8 @@ output:
 
 ``` r
 library(tidyverse)
-```
-
-    ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ## ✔ dplyr     1.1.2     ✔ readr     2.1.5
-    ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-    ## ✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-    ## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-    ## ✔ purrr     1.0.2     
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-    ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
 library(rstatix)
-```
 
-    ## 
-    ## 载入程辑包：'rstatix'
-    ## 
-    ## The following object is masked from 'package:stats':
-    ## 
-    ##     filter
-
-``` r
 example <- 
   tibble::tibble(
   para = rnorm(n = 30, mean = 300, sd = 20) %>% round(digits = 2),
@@ -66,17 +43,19 @@ example
     ## # Groups:   dose, date [15]
     ##     para dose   date    mean    sd     cv
     ##    <dbl> <chr>  <chr>  <dbl> <dbl>  <dbl>
-    ##  1  269. dose_1 date_1  277. 11.3  0.0409
-    ##  2  285. dose_1 date_1  277. 11.3  0.0409
-    ##  3  366. dose_2 date_1  339. 38.9  0.115 
-    ##  4  311. dose_2 date_1  339. 38.9  0.115 
-    ##  5  250. dose_3 date_1  299. 69.5  0.232 
-    ##  6  349. dose_3 date_1  299. 69.5  0.232 
-    ##  7  302. dose_4 date_1  295.  9.13 0.0309
-    ##  8  289. dose_4 date_1  295.  9.13 0.0309
-    ##  9  300. dose_5 date_1  308. 11.7  0.0380
-    ## 10  317. dose_5 date_1  308. 11.7  0.0380
+    ##  1  286. dose_1 date_1  289.  4.84 0.0167
+    ##  2  293. dose_1 date_1  289.  4.84 0.0167
+    ##  3  290. dose_2 date_1  299. 13.6  0.0455
+    ##  4  309. dose_2 date_1  299. 13.6  0.0455
+    ##  5  277. dose_3 date_1  303. 37.0  0.122 
+    ##  6  329. dose_3 date_1  303. 37.0  0.122 
+    ##  7  300. dose_4 date_1  307.  9.31 0.0303
+    ##  8  313. dose_4 date_1  307.  9.31 0.0303
+    ##  9  306. dose_5 date_1  286. 28.7  0.100 
+    ## 10  265. dose_5 date_1  286. 28.7  0.100 
     ## # ℹ 20 more rows
+
+# 2. Using Rstatix to calculate pvalue
 
 ``` r
 # Using Rstatix to calculate pvalue
@@ -95,20 +74,21 @@ stat.test
     ## # A tibble: 10 × 11
     ##    dose   .y.   group1 group2    n1    n2 statistic    df     p p.adj
     ##    <chr>  <chr> <chr>  <chr>  <int> <int>     <dbl> <dbl> <dbl> <dbl>
-    ##  1 dose_1 value date_1 date_2     2     2     0.726  1.42 0.569 1    
-    ##  2 dose_1 value date_1 date_3     2     2    -0.594  1.38 0.635 1    
-    ##  3 dose_2 value date_1 date_2     2     2     1.17   1.03 0.446 0.892
-    ##  4 dose_2 value date_1 date_3     2     2     0.401  1.20 0.748 0.892
-    ##  5 dose_3 value date_1 date_2     2     2     0.227  1.19 0.853 1    
-    ##  6 dose_3 value date_1 date_3     2     2    -0.157  1.00 0.901 1    
-    ##  7 dose_4 value date_1 date_2     2     2    -4.41   1.97 0.049 0.148
-    ##  8 dose_4 value date_1 date_3     2     2    -0.729  1.08 0.591 1    
-    ##  9 dose_5 value date_1 date_2     2     2    -0.220  1.50 0.852 1    
-    ## 10 dose_5 value date_1 date_3     2     2    -0.473  1.39 0.7   1    
+    ##  1 dose_1 value date_1 date_2     2     2  -4.45     1.92 0.051 0.121
+    ##  2 dose_1 value date_1 date_3     2     2  -7.81     1.40 0.04  0.121
+    ##  3 dose_2 value date_1 date_2     2     2   1.03     1.77 0.424 1    
+    ##  4 dose_2 value date_1 date_3     2     2  -0.00833  1.84 0.994 1    
+    ##  5 dose_3 value date_1 date_2     2     2   0.245    1.86 0.831 1    
+    ##  6 dose_3 value date_1 date_3     2     2   0.718    1.16 0.59  1    
+    ##  7 dose_4 value date_1 date_2     2     2   1.95     1.55 0.226 0.678
+    ##  8 dose_4 value date_1 date_3     2     2   0.107    1.09 0.931 1    
+    ##  9 dose_5 value date_1 date_2     2     2  -1.30     1.19 0.39  0.78 
+    ## 10 dose_5 value date_1 date_3     2     2  -0.462    1.14 0.717 0.78 
     ## # ℹ 1 more variable: p.adj.signif <chr>
 
+# 3. adjust lable position based on dodge width
+
 ``` r
-# adjust lable position based on dodge width
 stat.test <- stat.test %>% 
     add_xy_position(x = "dose", dodge = 0.75)
 
@@ -118,20 +98,20 @@ stat.test
     ## # A tibble: 10 × 16
     ##    dose   .y.   group1 group2    n1    n2 statistic    df     p p.adj
     ##    <chr>  <chr> <chr>  <chr>  <int> <int>     <dbl> <dbl> <dbl> <dbl>
-    ##  1 dose_1 value date_1 date_2     2     2     0.726  1.42 0.569 1    
-    ##  2 dose_1 value date_1 date_3     2     2    -0.594  1.38 0.635 1    
-    ##  3 dose_2 value date_1 date_2     2     2     1.17   1.03 0.446 0.892
-    ##  4 dose_2 value date_1 date_3     2     2     0.401  1.20 0.748 0.892
-    ##  5 dose_3 value date_1 date_2     2     2     0.227  1.19 0.853 1    
-    ##  6 dose_3 value date_1 date_3     2     2    -0.157  1.00 0.901 1    
-    ##  7 dose_4 value date_1 date_2     2     2    -4.41   1.97 0.049 0.148
-    ##  8 dose_4 value date_1 date_3     2     2    -0.729  1.08 0.591 1    
-    ##  9 dose_5 value date_1 date_2     2     2    -0.220  1.50 0.852 1    
-    ## 10 dose_5 value date_1 date_3     2     2    -0.473  1.39 0.7   1    
+    ##  1 dose_1 value date_1 date_2     2     2  -4.45     1.92 0.051 0.121
+    ##  2 dose_1 value date_1 date_3     2     2  -7.81     1.40 0.04  0.121
+    ##  3 dose_2 value date_1 date_2     2     2   1.03     1.77 0.424 1    
+    ##  4 dose_2 value date_1 date_3     2     2  -0.00833  1.84 0.994 1    
+    ##  5 dose_3 value date_1 date_2     2     2   0.245    1.86 0.831 1    
+    ##  6 dose_3 value date_1 date_3     2     2   0.718    1.16 0.59  1    
+    ##  7 dose_4 value date_1 date_2     2     2   1.95     1.55 0.226 0.678
+    ##  8 dose_4 value date_1 date_3     2     2   0.107    1.09 0.931 1    
+    ##  9 dose_5 value date_1 date_2     2     2  -1.30     1.19 0.39  0.78 
+    ## 10 dose_5 value date_1 date_3     2     2  -0.462    1.14 0.717 0.78 
     ## # ℹ 6 more variables: p.adj.signif <chr>, y.position <dbl>,
     ## #   groups <named list>, x <dbl>, xmin <dbl>, xmax <dbl>
 
-# get the final plot
+# 5. Get the final plot
 
 ``` r
 ggplot(example, aes(x = dose, y = para, color = dose, fill = dose)) +
