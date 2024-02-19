@@ -28,7 +28,7 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 
 # 1. Get example data
 
-```{r}
+```{r echo=FALSE, warning=FALSE}
 library(tidyverse)
 library(rstatix)
 
@@ -45,8 +45,8 @@ example <-
 example
 ```
 
-# Using Rstatix to calculate pvalue
 ```{r}
+# Using Rstatix to calculate pvalue
 stat.test <- example %>% 
   rename("value" = colnames(.)[1]) %>% 
   filter(sd != 0) %>%
@@ -56,9 +56,17 @@ stat.test <- example %>%
   t_test(value ~ date) %>% 
   filter(group1 == "date_1")
 
+stat.test
+```
+
+```{r}
+# adjust lable position based on dodge width
 stat.test <- stat.test %>% 
     add_xy_position(x = "dose", dodge = 0.75)
+
+stat.test
 ```
+
 
 # get the final plot
 ```{r fig.height=6, fig.width=9}
