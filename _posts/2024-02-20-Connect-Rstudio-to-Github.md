@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Create your R package(connect Rstudio to Github and push project to Github)
-subtitle: Add color to life.
+title: Create your R package
+subtitle: (Connect Rstudio to Github and push project to Github)
 date: "2024-02-20"
 author: Chevy
 header-img: img/055.png
@@ -20,7 +20,21 @@ output:
   # toc: yes
 ---
 
-# Connecting Rstudio to Github
+# 1. Use Rstudio to create a new project for package
+
+![Reference:R Package
+Development](https://www.youtube.com/watch?v=79s3z0gIuFU&ab_channel=JohnMuschelli)
+\> Start from a brand new environment.
+
+# 2. Connecting Rstudio to Github
+
+<figure>
+<img
+src="https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r"
+alt="Reference:how-to-use-git-github-with-r" />
+<figcaption
+aria-hidden="true">Reference:how-to-use-git-github-with-r</figcaption>
+</figure>
 
 ``` r
 # 1. create token from github

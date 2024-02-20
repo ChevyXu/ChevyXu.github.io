@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Create your R package(connect Rstudio to Github and push project to Github)
-subtitle: Add color to life.
+title: Create your R package
+subtitle: (Connect Rstudio to Github and push project to Github)
 date: "`r Sys.Date()`"
 author: Chevy
 header-img: img/055.png
@@ -26,8 +26,13 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 # knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# 1. Use Rstudio to create a new project for package
+![Reference:R Package Development](https://www.youtube.com/watch?v=79s3z0gIuFU&ab_channel=JohnMuschelli)
+> Start from a brand new environment.
 
-# Connecting Rstudio to Github
+
+# 2. Connecting Rstudio to Github
+![Reference:how-to-use-git-github-with-r](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r)
 ```{r}
 # 1. create token from github
 # usethis::create_github_token()
