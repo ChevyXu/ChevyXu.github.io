@@ -1,0 +1,41 @@
+---
+layout: post
+title: Create your R package(connect Rstudio to Github and push project to Github)
+subtitle: Add color to life.
+date: "`r Sys.Date()`"
+author: Chevy
+header-img: img/055.png
+catalog: true
+tags:
+  - 技术学习笔记
+style: plain 
+knit: (function(input, encoding) {
+  rmarkdown::render(input, output_dir = "../_posts/")})
+output: 
+  md_document:
+    variant: markdown_github
+    preserve_yaml: true
+  # prettydoc::html_pretty:
+  # theme: cayman
+  # toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(base.dir = "../../ChevyXu.github.io/", base.url = "/")
+knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
+# knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Connecting Rstudio to Github
+```{r}
+# 1. create token from github
+# usethis::create_github_token()
+
+# 2. set token to Rstudio
+# gitcreds::gitcreds_set()
+
+# 3. create repo based on local repo and push to github
+# usethis::use_github()
+```
+
