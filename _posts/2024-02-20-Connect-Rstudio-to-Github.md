@@ -2,7 +2,7 @@
 layout: post
 title: Create your R package
 subtitle: (Connect Rstudio to Github and push project to Github)
-date: "2024-02-20"
+date: "2024-02-21"
 author: Chevy
 header-img: img/055.png
 catalog: true
@@ -22,26 +22,21 @@ output:
 
 # 1. Use Rstudio to create a new project for package
 
-![Reference:R Package
+[Reference:R Package
 Development](https://www.youtube.com/watch?v=79s3z0gIuFU&ab_channel=JohnMuschelli)
 \> Start from a brand new environment.
 
 # 2. Connecting Rstudio to Github
 
-<figure>
-<img
-src="https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r"
-alt="Reference:how-to-use-git-github-with-r" />
-<figcaption
-aria-hidden="true">Reference:how-to-use-git-github-with-r</figcaption>
-</figure>
+[Reference:how-to-use-git-github-with-r](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r)
 
 ``` r
 # 1. create token from github
 # usethis::create_github_token()
 
-# 2. set token to Rstudio
+# 2. set token to Rstudio, paste the PAT to Rstudio window
 # gitcreds::gitcreds_set()
+# credentials::set_github_pat()
 
 # 3. create repo based on local repo and push to github
 # usethis::use_github()
