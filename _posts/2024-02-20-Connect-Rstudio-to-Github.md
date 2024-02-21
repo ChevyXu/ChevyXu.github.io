@@ -32,12 +32,15 @@ Development](https://www.youtube.com/watch?v=79s3z0gIuFU&ab_channel=JohnMuschell
 
 ``` r
 # 1. create token from github
-# usethis::create_github_token()
+usethis::create_github_token()
 
 # 2. set token to Rstudio, paste the PAT to Rstudio window
 # gitcreds::gitcreds_set()
-# credentials::set_github_pat()
+credentials::set_github_pat()
 
 # 3. create repo based on local repo and push to github
-# usethis::use_github()
+usethis::use_github()
+
+# 4. create a vignette
+usethis::use_vignette(name = "chunhui_vignette", title = "This is a vignette")
 ```

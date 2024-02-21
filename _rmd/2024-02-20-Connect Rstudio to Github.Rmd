@@ -33,15 +33,19 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 
 # 2. Connecting Rstudio to Github
 [Reference:how-to-use-git-github-with-r](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r)
-```{r set PAT}
+```{r set PAT, eval = F}
 # 1. create token from github
-# usethis::create_github_token()
+usethis::create_github_token()
 
 # 2. set token to Rstudio, paste the PAT to Rstudio window
 # gitcreds::gitcreds_set()
-# credentials::set_github_pat()
+credentials::set_github_pat()
 
 # 3. create repo based on local repo and push to github
-# usethis::use_github()
+usethis::use_github()
+
+# 4. create a vignette
+usethis::use_vignette(name = "chunhui_vignette", title = "This is a vignette")
 ```
+
 
