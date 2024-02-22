@@ -35,20 +35,28 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 
 
 # set files and places
-tmp_fastq1="$HOME/projects/SmithLab_PARCLIP/14Q-sample1_R1_mini.fastq"
-tmp_fastq2="$HOME/projects/SmithLab_PARCLIP/14Q-sample1_R2_mini.fastq"
-tmp_outdir="$HOME/projects/SmithLab_PARCLIP/test_bowtie2"
+tmp_fastq1="path_to_your_file/example1_R1_mini.fastq"
+tmp_fastq2="path_to_your_file/sample1_R2_mini.fastq"
+tmp_outdir="word_dir"
 cd $tmp_outdir
-module load bowtie2 # http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+
+module load bowtie2 
+# http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+
 module load samtools/1.2.1
 mapq=30
+
 THREADS=${NSLOTS:=8}
 tmpGenome="/local/data/iGenomes/Homo_sapiens/UCSC/hg19/Sequence/Bowtie2Index/genome"
 tmpOUTFILE="$(basename "$tmp_fastq1")"
 
 # ~~~~~~~~~ # 
 # FINAL COMMAND TO USE:
-(bowtie2 --threads "$THREADS" --local -x "$tmpGenome" -q -1 "$tmp_fastq1" -2 "$tmp_fastq2" --met-file bowtie2_alignment-metrics.txt | samtools view -@ "$THREADS" -Sb1 - | samtools sort -m 10G -@ "$THREADS" - "$tmpOUTFILE" ) 3>&1 1>&2 2>&3 | tee stderr.log 
+(bowtie2 --threads "$THREADS" --local -x "$tmpGenome" -q \ 
+  -1 "$tmp_fastq1" -2 "$tmp_fastq2" --met-file bowtie2_alignment-metrics.txt | 
+  samtools view -@ "$THREADS" -Sb1 - | 
+  samtools sort -m 10G -@ "$THREADS" - "$tmpOUTFILE" ) 3>&1 1>&2 2>&3 | 
+  tee stderr.log 
 
 # ~~~~~~~~~ #
 # EXPLANATIONS & EXAMPLES:
