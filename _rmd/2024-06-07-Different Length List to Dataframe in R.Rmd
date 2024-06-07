@@ -67,12 +67,9 @@ gene_list <- list(
   GeneListD = c()
 )
 
-print(gene_list)
 
 # Replace NULL with empty character vectors
-gene_list <- lapply(gene_list, function(x) if (is.null(x)) character(0) else x)
+gene_list_modified <- lapply(gene_list, function(x) if (is.null(x)) character(0) else x)
 
-cat("===================================================================\n")
-
-print(gene_list)
+print(gene_list); cat("==============After Modifeid=============\n\n") ;print(gene_list_modified)
 ```
