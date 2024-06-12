@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Bowtei2_Hisat2_pip_to_bam_files
-subtitle: using | and tee to reduce tmp files
-date: "2024-06-12"
+subtitle: 芳林新叶催陈叶，流水前波让后波。
+# date: "2024-06-12"
+date: "2024-03-22"
 author: Chevy
 header-img: img/055.png
 catalog: true
