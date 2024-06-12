@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Different Length List to Dataframe in R
-subtitle: 对齐颗粒度
-date: "2024-06-07"
+subtitle: 故人何不返，春花复应晚。
+date: "2024-06-12"
 author: Chevy
 header-img: img/055.png
 catalog: true
@@ -20,7 +20,7 @@ output:
   # toc: yes
 ---
 
-# Set a demo list
+# 1. Set a demo list
 
 ``` r
 # Your input list
@@ -79,7 +79,7 @@ gene_list <- list(
 # Replace NULL with empty character vectors
 gene_list_modified <- lapply(gene_list, function(x) if (is.null(x)) character(0) else x)
 
-print(gene_list); cat("==============After Modifeid=============\n\n") ;print(gene_list_modified)
+print(gene_list)
 ```
 
     ## $GeneListA
@@ -94,7 +94,9 @@ print(gene_list); cat("==============After Modifeid=============\n\n") ;print(ge
     ## $GeneListD
     ## NULL
 
-    ## ==============After Modifeid=============
+``` r
+print(gene_list_modified)
+```
 
     ## $GeneListA
     ## [1] "A" "B" "C" "D" "E" "F"
@@ -107,3 +109,5 @@ print(gene_list); cat("==============After Modifeid=============\n\n") ;print(ge
     ## 
     ## $GeneListD
     ## character(0)
+
+# 3. Then we could turn wider dataframe to longer dataframe using pivot function.

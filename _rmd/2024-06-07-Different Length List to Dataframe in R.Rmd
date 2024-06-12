@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Different Length List to Dataframe in R
-subtitle: 对齐颗粒度
+subtitle: 故人何不返，春花复应晚。
 date: "`r Sys.Date()`"
 author: Chevy
 header-img: img/055.png
@@ -26,7 +26,7 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 # knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Set a demo list
+# 1. Set a demo list
 ```{r}
 # Your input list
 gene_list <- list(
@@ -71,5 +71,8 @@ gene_list <- list(
 # Replace NULL with empty character vectors
 gene_list_modified <- lapply(gene_list, function(x) if (is.null(x)) character(0) else x)
 
-print(gene_list); cat("==============After Modifeid=============\n\n") ;print(gene_list_modified)
+print(gene_list)
+
+print(gene_list_modified)
 ```
+# 3. Then we could turn wider dataframe to longer dataframe using pivot function.
