@@ -27,12 +27,12 @@ knitr::opts_chunk$set(fig.path = paste0("img/", Sys.Date(), "/"))
 ```
 
 
-```{bash tutorial,eval = F}
-#!/bin/bash
+## PROBLEM: want to preseve the terminal output from bowtie2, but also copy the stderr from bowtie into a separate file
 
-# PROBLEM: want to preseve the terminal output from bowtie2, but also copy the stderr from bowtie into a separate file
 # SOLUTION: use `tee` along with some bash stream redirection to copy the stderr stream to a new file AND print it on the terminal
 
+```{bash tutorial,eval = F}
+#!/bin/bash
 
 # set files and places
 tmp_fastq1="path_to_your_file/example1_R1_mini.fastq"

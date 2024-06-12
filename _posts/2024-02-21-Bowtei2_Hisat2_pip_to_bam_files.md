@@ -2,7 +2,7 @@
 layout: post
 title: Bowtei2_Hisat2_pip_to_bam_files
 subtitle: using | and tee to reduce tmp files
-date: "2024-02-21"
+date: "2024-06-12"
 author: Chevy
 header-img: img/055.png
 catalog: true
@@ -20,28 +20,36 @@ output:
   # toc: yes
 ---
 
+## PROBLEM: want to preseve the terminal output from bowtie2, but also copy the stderr from bowtie into a separate file
+
+# SOLUTION: use `tee` along with some bash stream redirection to copy the stderr stream to a new file AND print it on the terminal
+
 ``` bash
 #!/bin/bash
 
-# PROBLEM: want to preseve the terminal output from bowtie2, but also copy the stderr from bowtie into a separate file
-# SOLUTION: use `tee` along with some bash stream redirection to copy the stderr stream to a new file AND print it on the terminal
-
-
 # set files and places
-tmp_fastq1="$HOME/projects/SmithLab_PARCLIP/14Q-sample1_R1_mini.fastq"
-tmp_fastq2="$HOME/projects/SmithLab_PARCLIP/14Q-sample1_R2_mini.fastq"
-tmp_outdir="$HOME/projects/SmithLab_PARCLIP/test_bowtie2"
+tmp_fastq1="path_to_your_file/example1_R1_mini.fastq"
+tmp_fastq2="path_to_your_file/sample1_R2_mini.fastq"
+tmp_outdir="word_dir"
 cd $tmp_outdir
-module load bowtie2 # http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+
+module load bowtie2 
+# http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml
+
 module load samtools/1.2.1
 mapq=30
+
 THREADS=${NSLOTS:=8}
 tmpGenome="/local/data/iGenomes/Homo_sapiens/UCSC/hg19/Sequence/Bowtie2Index/genome"
 tmpOUTFILE="$(basename "$tmp_fastq1")"
 
 # ~~~~~~~~~ # 
 # FINAL COMMAND TO USE:
-(bowtie2 --threads "$THREADS" --local -x "$tmpGenome" -q -1 "$tmp_fastq1" -2 "$tmp_fastq2" --met-file bowtie2_alignment-metrics.txt | samtools view -@ "$THREADS" -Sb1 - | samtools sort -m 10G -@ "$THREADS" - "$tmpOUTFILE" ) 3>&1 1>&2 2>&3 | tee stderr.log 
+(bowtie2 --threads "$THREADS" --local -x "$tmpGenome" -q \ 
+  -1 "$tmp_fastq1" -2 "$tmp_fastq2" --met-file bowtie2_alignment-metrics.txt | 
+  samtools view -@ "$THREADS" -Sb1 - | 
+  samtools sort -m 10G -@ "$THREADS" - "$tmpOUTFILE" ) 3>&1 1>&2 2>&3 | 
+  tee stderr.log 
 
 # ~~~~~~~~~ #
 # EXPLANATIONS & EXAMPLES:
