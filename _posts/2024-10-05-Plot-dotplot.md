@@ -26,13 +26,8 @@ Load the dataset and adjust outliers in IC50 values. Replace any value
 of 1000 in the IC50 column with a calculated outlier value.
 
 ``` r
-data <- readxl::read_excel("D://OneDrive - 上海达歌生物医药科技有限公司/Degron_Work/13. Oncoline analysis/DEG1348.xlsx", sheet = 2) %>% rename(IC50 = colnames(.)[6])
+data <- readxl::read_excel("ic50.xlsx", sheet = 2) %>% rename(IC50 = colnames(.)[6])
 ```
-
-    ## New names:
-    ## • `` -> `...5`
-    ## • `` -> `...8`
-    ## • `` -> `...10`
 
 ``` r
 outlier <- (data$IC50 %>% sort(decreasing = TRUE) %>% nth(2)) * 1.1
